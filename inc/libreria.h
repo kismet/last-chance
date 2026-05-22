@@ -6,43 +6,44 @@
 #include "libreria_tipi.h"
 
 /**
- * Calcola la media di punteggi
+ * Calcola la media dei costi dei libri
  */
-void calcola_media(Pilota_t &x);
+void costo_medio_libri(Libri_t &x);
 
 /**
- * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
+ * Aggiunge il p prezzo all'elenco dei libri x se ci sono posti liberi e altrimenti restituisce false
  */
-bool aggiungi_granpremio(Pilota_t &x, int p);
+bool aggiungi_costo_libro(Libri_t &x, float p);
 
 /**
- * Inizializza un pilota, dandogli un nome n e una scuderia s
+ * Inizializza un lista libri indicando classe e indirizzo
  */
-void crea_pilota(Pilota_t &x, string n, string s);
+void crea_lista_libri(Libri_t &x, string c, string i);
 
 /**
- * Stampa tutte le informazioni del pilota x: nome, cognome, numero di gran premi e punteggio per ogni gran premio
- * e infine la media
+ * Stampa tutte le informazioni della lista dei libri  x: classe, indirizzo, numero di libri impiegati, il costo di ogni
+ * libro e infine la media
  */
-void stampa_pilota(Pilota_t *x);
+void stampa_lista_libri(Libri_t *x);
 
 /**
- * Togli p punti dall'ultimo piazzamento del pilota x
+ * Togli x euro dal prezzo dall'ultimo libro in elenco
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void retrocedi(Pilota_t *s, float punti);
+void sconto(Libri_t *s, float punti);
 
 /**
- * Restituisce il Pilota campione del mondo (quello con più punti)
+ * Restituisce il costo del libro più economico
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Pilota_t* campione_del_mondo(Pilota_t pilots[], int dim);
+Libri_t* libro_economico(Libri_t pilots[], int dim);
 
 /**
- * Restituisce il nome della scuderia che ha fatto più punti (contando i punti dei piloti di quella scuderia)
- * BONUS: per chi ha diritto alla riduzione
+ * Indirizzo più impegnativo per le famiglie, restituisce il nome dell'indirizzo che il totale dei costi dei
+ * libri maggiore
+ * BONUS: per TUTTI
  */
-string scuderia_campione(Pilota_t pilots[], int dim);
+string scuderia_campione(Libri_t pilots[], int dim);
 
 
 #define LAST_CHANCE_LIBRERIA_H

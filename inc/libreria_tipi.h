@@ -9,14 +9,14 @@
 
 using namespace std;
 
-uint16_t const N_GRAN_PREMI = 22;
+uint16_t const N_MATERIE = 10;
 
-typedef struct Pilota {
-    string cognome; //cognome del pilota
-    string scuderia; //nome della scuderia a cui appartiene
-    int punti[N_GRAN_PREMI]; //i punti presi in ogni gran premio
-    int numero_gp; //il numero di gran premi svolti fino a oggi
-    float media;  //media dei punti fatti a ogni gran premio
-} Pilota_t;
+typedef struct Libri {
+    string anno; //anno delle superiori: prima, quinta, seconda, etc.
+    string indirizzo; //nome dell'indirizzo scienze applicate, informatica, etc.
+    float costo[N_MATERIE]; //il costo di ogni singolo libro necessario per questa classe
+    int num_libri; //il numero di libri in quella classe
+    float media;  //media del costo dei libri per questa classe
+} Libri_t;
 
 #endif //LAST_CHANCE_LIBRERIA_TIPI_H
