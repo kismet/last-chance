@@ -29,6 +29,10 @@ disponibile sarebbe, molto conveniente e caldamente consigliata)
 ### Task 1.4: Push finale [1 punto]
 Effettuare il push finale del proprio branch sul repository
 
-### Task 1.5: Merge dei risultati [2 punti]
-Effettuare il merge del proprio branch nel branch principale del repository, quello da cui abbiamo creato 
-il proprio branch inizialmente.
+### Task 1.5: Merge dei risultati [1.5 punti]
+Effettuare un branch del branch principale (quello da cui abbiamo creato il proprio branch inizialmente) in `merging/cognome`
+(dove `cognome` è il cognome dello studente in minuscolo).
+Effettuare il merge del proprio branch in `merging/cognome` e fare la push del branch `merging/cognome` sul repository
+
+### Task 1.6 Risoluzione dei conflitti (BONUS) [1.5 punti]
+Effettuare il merge di  `merging/cognome` su branch principale `main`
