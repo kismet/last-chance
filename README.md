@@ -1,13 +1,15 @@
+# COMPLIMENTI
+Se sei qui hai gia trovato il testo reale del compito da svolgere!
+
 # Ultima possibila
 Progetto di Informatica del 23 maggio 2026 su
  - Git, GitHub e SourceGit
  - programmazione e uso dei tool di programmazione (CLion)
 
 # Istruzioni
-Ogni studente troverà andare il testo del compito nel branch della propria fila.
+Il testo del compito si trova nel file REGOLE.md, leggi il tutto con **ATTENZIONE**
 
-## Nota 1: IMPORTANTE
-Se siete fermi qui e non sapete come procedere **CHIAMATE IL PROF** per poter effettivamente iniziare il compito
-
-## Nota 2: FAKE main
-Il main che trovate in questo progetto **NON E' IL COMPITO** vedi **NOTA 1**
+## IMPORTANTE: COMMIT & PUSH
+Verrà valutato solo quello che si trova nel repository GitHub, 
+quindi prima di lasciare l'aula **assicurati con il prof.** che tutto
+il tuo lavoro e le modifiche siano REALMENTE su GitHub
