@@ -1,7 +1,10 @@
 //
 // Created by stefy on 22/05/2026.
 //
-
+// Autore: Buono Lorenzo
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   A
 #ifndef LAST_CHANCE_LIBRERIA_H
 #include "libreria_tipi.h"
 
