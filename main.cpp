@@ -3,52 +3,49 @@
 
 using namespace std;
 
-
 int main() {
 
-    // --- TEST 1: crea_pilota ---
-    cout << "[TEST 1] Inizializzazione dei piloti con crea_pilota()" << endl;
-    Pilota_t p1, p2, p3;
-    crea_pilota(p1, "Leclerc", "Ferrari");
-    crea_pilota(p2, "Hamilton", "Ferrari");
-    crea_pilota(p3, "Verstappen", "Red Bull");
+    // --- TEST 1: crea_viaggio ---
+    cout << "[TEST 1] Inizializzazione dei viaggi con crea_viaggio()" << endl;
+    Viaggio_t v1, v2, v3;
+    crea_viaggio(v1, "Roma", "Milano");
+    crea_viaggio(v2, "Napoli", "Milano");
+    crea_viaggio(v3, "Firenze", "Torino");
 
-    cout << "Pilota 1 creato:" << endl;
-    stampa_pilota(p1);
-    cout << "Pilota 2 creato:" << endl;
-    stampa_pilota(p2);
-    cout << "Pilota 3 creato:" << endl;
-    stampa_pilota(p3);
+    cout << "Viaggio 1 creato:" << endl;
+    stampa_viaggio(v1); // Corretto: passa l'indirizzo &v1
+    cout << "Viaggio 2 creato:" << endl;
+    stampa_viaggio(v2); // Corretto: passa l'indirizzo &v2
+    cout << "Viaggio 3 creato:" << endl;
+    stampa_viaggio(v3); // Corretto: passa l'indirizzo &v3
     cout << endl;
 
-    // --- TEST 2: aggiungi_granpremio e calcola_media ---
-    cout << "[TEST 2] Aggiunta di punteggi con aggiungi_granpremio()" << endl;
+    // --- TEST 2: aggiungi_tratta e calcola_media ---
+    cout << "[TEST 2] Aggiunta di tratte con aggiungi_tratta()" << endl;
     cout << "(La media viene ricalcolata automaticamente tramite calcola_media)" << endl << endl;
 
-    // Leclerc
-    aggiungi_granpremio(p1, 25); // GP 1
-    aggiungi_granpremio(p1, 18); // GP 2
-    aggiungi_granpremio(p1, 15); // GP 3
+    // Viaggio 1 (Roma -> Milano)
+    aggiungi_tratta(v1, 150.5f); // Tratta 1
+    aggiungi_tratta(v1, 220.0f); // Tratta 2
+    aggiungi_tratta(v1, 180.0f); // Tratta 3
 
-    // Hamilton
-    aggiungi_granpremio(p2, 12); // GP 1
-    aggiungi_granpremio(p2, 10); // GP 2
-    aggiungi_granpremio(p2, 18); // GP 3
-    aggiungi_granpremio(p2, 25); // GP 4
+    // Viaggio 2 (Napoli -> Milano)
+    aggiungi_tratta(v2, 300.0f); // Tratta 1
+    aggiungi_tratta(v2, 450.0f); // Tratta 2
 
-    // Verstappen
-    aggiungi_granpremio(p3, 25); // GP 1
-    aggiungi_granpremio(p3, 25); // GP 2
-    aggiungi_granpremio(p3, 25); // GP 3
-    aggiungi_granpremio(p3, 18); // GP 4
+    // Viaggio 3 (Firenze -> Torino)
+    aggiungi_tratta(v3, 120.0f); // Tratta 1
+    aggiungi_tratta(v3, 100.0f); // Tratta 2
+    aggiungi_tratta(v3, 180.0f); // Tratta 3
+    aggiungi_tratta(v3, 90.0f);  // Tratta 4
 
-    cout << "Stato dopo l'inserimento dei Gran Premi:" << endl;
-    cout << "Leclerc:" << endl;
-    stampa_pilota(p1);
-    cout << "Hamilton:" << endl;
-    stampa_pilota(p2);
-    cout << "Verstappen:" << endl;
-    stampa_pilota(p3);
+    cout << "Stato dei viaggi dopo l'inserimento delle tratte:" << endl;
+    cout << "Viaggio 1 (Roma -> Milano):" << endl;
+    stampa_viaggio(&v1);
+    cout << "Viaggio 2 (Napoli -> Milano):" << endl;
+    stampa_viaggio(&v2);
+    cout << "Viaggio 3 (Firenze -> Torino):" << endl;
+    stampa_viaggio(&v3);
     cout << endl;
 
     return 0;

@@ -9,14 +9,14 @@
 
 using namespace std;
 
-uint16_t const N_GRAN_PREMI = 22;
+uint16_t const N_FERMATE_STOP = 22;
 
-typedef struct Pilota {
-    string cognome; //cognome del pilota
-    string scuderia; //nome della scuderia a cui appartiene
-    int punti[N_GRAN_PREMI]; //i punti presi in ogni gran premio
-    int numero_gp; //il numero di gran premi svolti fino a oggi
-    float media;  //media dei punti fatti a ogni gran premio
-} Pilota_t;
+typedef struct Viaggio {
+    string partenza; //luogo di partenza del viaggio
+    string destinazione; //luogo di destinazioni del viaggio
+    float tratte[N_FERMATE_STOP]; //i km percorsi a ogni tratta del percorso
+    int numero_tratte; //il numero di tratte fatte fino a quel momento
+    float media;  //medi dei km percorsi prima di fare una sosta
+} Viaggio_t;
 
 #endif //LAST_CHANCE_LIBRERIA_TIPI_H

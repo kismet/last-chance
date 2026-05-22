@@ -1,12 +1,13 @@
+#include "../inc/libreria_tipi.h"
 /**
 * Calcola la media di punteggi
  */
-void calcola_media(Pilota_t &x);
+void media_tratta(Viaggio_t &x);
 
 /**
  * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
  */
-bool aggiungi_granpremio(Pilota_t &x, int p);
+bool (Pilota_t &x, int p);
 
 /**
  * Inizializza un pilota, dandogli un nome n e una scuderia s
