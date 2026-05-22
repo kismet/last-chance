@@ -36,13 +36,13 @@ void scorciatoia(Viaggio_t *s, float punti);
  * Restituisce il Viaggio più lungo in termini di kilometri
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Viaggio_t* viaggio_lungo(Viaggio_t pilots[], int dim);
+Viaggio_t* viaggio_lungo(Viaggio_t viaggi[], int dim);
 
 /**
  * Restituisce la destinazione che ha il maggior numero di km percorsi che la raggiungono
  * BONUS: per chi ha diritto alla riduzione
  */
-string destinazione_principale(Viaggio_t pilots[], int dim);
+string destinazione_principale(Viaggio_t viaggi[], int dim);
 
 
 #define LAST_CHANCE_LIBRERIA_H
