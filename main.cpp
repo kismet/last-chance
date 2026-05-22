@@ -1,16 +1,55 @@
 #include <iostream>
+#include "inc/libreria_tipi.h"
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+using namespace std;
+
+
 int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
-    }
+    // --- TEST 1: crea_pilota ---
+    cout << "[TEST 1] Inizializzazione dei piloti con crea_pilota()" << endl;
+    Pilota_t p1, p2, p3;
+    crea_pilota(p1, "Leclerc", "Ferrari");
+    crea_pilota(p2, "Hamilton", "Ferrari");
+    crea_pilota(p3, "Verstappen", "Red Bull");
+
+    cout << "Pilota 1 creato:" << endl;
+    stampa_pilota(p1);
+    cout << "Pilota 2 creato:" << endl;
+    stampa_pilota(p2);
+    cout << "Pilota 3 creato:" << endl;
+    stampa_pilota(p3);
+    cout << endl;
+
+    // --- TEST 2: aggiungi_granpremio e calcola_media ---
+    cout << "[TEST 2] Aggiunta di punteggi con aggiungi_granpremio()" << endl;
+    cout << "(La media viene ricalcolata automaticamente tramite calcola_media)" << endl << endl;
+
+    // Leclerc
+    aggiungi_granpremio(p1, 25); // GP 1
+    aggiungi_granpremio(p1, 18); // GP 2
+    aggiungi_granpremio(p1, 15); // GP 3
+
+    // Hamilton
+    aggiungi_granpremio(p2, 12); // GP 1
+    aggiungi_granpremio(p2, 10); // GP 2
+    aggiungi_granpremio(p2, 18); // GP 3
+    aggiungi_granpremio(p2, 25); // GP 4
+
+    // Verstappen
+    aggiungi_granpremio(p3, 25); // GP 1
+    aggiungi_granpremio(p3, 25); // GP 2
+    aggiungi_granpremio(p3, 25); // GP 3
+    aggiungi_granpremio(p3, 18); // GP 4
+
+    cout << "Stato dopo l'inserimento dei Gran Premi:" << endl;
+    cout << "Leclerc:" << endl;
+    stampa_pilota(p1);
+    cout << "Hamilton:" << endl;
+    stampa_pilota(p2);
+    cout << "Verstappen:" << endl;
+    stampa_pilota(p3);
+    cout << endl;
 
     return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
