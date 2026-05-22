@@ -6,44 +6,43 @@
 #include "libreria_tipi.h"
 
 /**
- * Calcola la media dei costi dei libri
+ * Calcola la media di km di compiere in questa gara
  */
-void costo_medio_libri(Libri_t &x);
+void lunghezza_media(Gara_Tappe_t &x);
 
 /**
- * Aggiunge il p prezzo all'elenco dei libri x se ci sono posti liberi e altrimenti restituisce false
+ * Aggiunge il p kilometri all'elenco di un cadavedere x se ci sono posti liberi e altrimenti restituisce false
  */
-bool aggiungi_costo_libro(Libri_t &x, float p);
+bool aggiungi_tappa(Gara_Tappe_t &x, float p);
 
 /**
- * Inizializza un lista libri indicando classe e indirizzo
+ * Inizializza una gara a tappe di nome n ed edizione e
  */
-void crea_lista_libri(Libri_t &x, string c, string i);
+void crea_gara(Gara_Tappe_t &x, string n, int e);
 
 /**
- * Stampa tutte le informazioni della lista dei libri  x: classe, indirizzo, numero di libri impiegati, il costo di ogni
- * libro e infine la media
+ * Stampa tutte le informazioni della gara a tappe x: nome, edizione, numero di tappe,
+ * lunghezza di ogni tappa,  e infine la media
  */
-void stampa_lista_libri(Libri_t *x);
+void stampa_gara(Gara_Tappe_t *x);
 
 /**
- * Togli x euro dal prezzo dall'ultimo libro in elenco
+ * Togli x km dall'ultima tappa
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void sconto(Libri_t *s, float punti);
+void trasferimento(Gara_Tappe_t *s, float km);
 
 /**
- * Restituisce il costo del libro più economico
+ * Restituisce la gara più lunga
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Libri_t* libro_economico(Libri_t pilots[], int dim);
+Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim);
 
 /**
- * Indirizzo più impegnativo per le famiglie, restituisce il nome dell'indirizzo che il totale dei costi dei
- * libri maggiore
+ * Restituisce il nome della gara che risulta più lunga in km dalla sua prima edizione ad ora
  * BONUS: per TUTTI
  */
-string scuderia_campione(Libri_t pilots[], int dim);
+string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim);
 
 
 #define LAST_CHANCE_LIBRERIA_H

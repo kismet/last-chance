@@ -9,14 +9,14 @@
 
 using namespace std;
 
-uint16_t const N_MATERIE = 10;
+uint16_t const N_MASSIMO_TAPPE = 100;
 
-typedef struct Libri {
-    string anno; //anno delle superiori: prima, quinta, seconda, etc.
-    string indirizzo; //nome dell'indirizzo scienze applicate, informatica, etc.
-    float costo[N_MATERIE]; //il costo di ogni singolo libro necessario per questa classe
-    int num_libri; //il numero di libri in quella classe
-    float media;  //media del costo dei libri per questa classe
-} Libri_t;
+typedef struct Gara_Tappe {
+    string nome; //nome della gara. Es.: Giro d'Italia, Tour de France, etc.
+    int anno; //edizione di riferimento: 30°, 55°, etc.
+    float tappe[N_MASSIMO_TAPPE]; //i km per ogni tappa
+    int num_tappe; //il numero di tappe in archivio
+    float lunghezza_media_tappe;  //media della lunghezza delle tappe
+} Gara_Tappe_t;
 
 #endif //LAST_CHANCE_LIBRERIA_TIPI_H

@@ -1,74 +1,64 @@
 #include <iostream>
-#include <iomanip>
-#include "inc/libreria_tipi.h"
+#include <string>
+#include "inc/libreria_tipi.h.h"
 
 using namespace std;
 
 int main() {
+    // --- TEST 1: crea_gara ---
+    cout << "\n[TEST 1] Inizializzazione delle gare con crea_gara()" << endl;
+    Gara_Tappe_t g1, g2, g3, g4;
+    
+    crea_gara(g1, "Giro d'Italia", 109);
+    crea_gara(g2, "Tour de France", 113);
+    crea_gara(g3, "Vuelta a Espana", 79);
+    crea_gara(g4, "Giro d'Italia", 108); // Seconda edizione dello stesso evento per test storico
 
-    // --- TEST 1: crea_lista_libri ---
-    cout << "[TEST 1] Inizializzazione liste libri con crea_lista_libri()" << endl;
-    Libri_t c1, c2, c3;
-    crea_lista_libri(c1, "3AI", "Informatica");
-    crea_lista_libri(c2, "5BI", "Informatica");
-    crea_lista_libri(c3, "1CSA", "Scienze Applicate");
+    cout << "Rilevate/Inizializzate le seguenti gare:" << endl;
+    cout << "- " << g1.nome << " (Edizione " << g1.anno << ")" << endl;
+    cout << "- " << g2.nome << " (Edizione " << g2.anno << ")" << endl;
+    cout << "- " << g3.nome << " (Edizione " << g3.anno << ")" << endl;
+    cout << "- " << g4.nome << " (Edizione " << g4.anno << ")" << endl;
 
-    cout << "Classe 1 creata:" << endl;
-    stampa_lista_libri(&c1);
-    cout << "Classe 2 creata:" << endl;
-    stampa_lista_libri(&c2);
-    cout << "Classe 3 creata:" << endl;
-    stampa_lista_libri(&c3);
-    cout << endl;
+    // --- TEST 2: aggiungi_tappa ---
+    cout << "\n[TEST 2] Aggiunta di tappe con aggiungi_tappa()" << endl;
+    
+    // Gara 1: Giro d'Italia Ed. 109
+    cout << "Aggiunta tappe a " << g1.nome << " (Ed. " << g1.anno << "):" << endl;
+    if (aggiungi_tappa(g1, 150.5f)) cout << "  Tappa 1 (150.5 km) aggiunta." << endl;
+    if (aggiungi_tappa(g1, 180.2f)) cout << "  Tappa 2 (180.2 km) aggiunta." << endl;
+    if (aggiungi_tappa(g1, 35.0f))  cout << "  Tappa 3 (35.0 km) aggiunta." << endl;
 
-    // --- TEST 2: aggiungi_costo_libro e costo_medio_libri ---
-    cout << "[TEST 2] Aggiunta dei prezzi dei libri con aggiungi_costo_libro()" << endl;
-    cout << "(La media viene ricalcolata in automatico tramite costo_medio_libri)" << endl << endl;
+    // Gara 2: Tour de France Ed. 113
+    cout << "Aggiunta tappe a " << g2.nome << " (Ed. " << g2.anno << "):" << endl;
+    if (aggiungi_tappa(g2, 200.0f)) cout << "  Tappa 1 (200.0 km) aggiunta." << endl;
+    if (aggiungi_tappa(g2, 220.5f)) cout << "  Tappa 2 (220.5 km) aggiunta." << endl;
 
-    // Classe c1 (3A Informatica)
-    aggiungi_costo_libro(c1, 15.50f);
-    aggiungi_costo_libro(c1, 24.00f);
-    aggiungi_costo_libro(c1, 32.80f);
-    aggiungi_costo_libro(c1, 19.99f);
+    // Gara 3: Vuelta a Espana Ed. 79
+    cout << "Aggiunta tappe a " << g3.nome << " (Ed. " << g3.anno << "):" << endl;
+    if (aggiungi_tappa(g3, 140.0f)) cout << "  Tappa 1 (140.0 km) aggiunta." << endl;
+    if (aggiungi_tappa(g3, 165.8f)) cout << "  Tappa 2 (165.8 km) aggiunta." << endl;
 
-    // Classe c2 (5B Informatica)
-    aggiungi_costo_libro(c2, 45.00f);
-    aggiungi_costo_libro(c2, 52.50f);
-    aggiungi_costo_libro(c2, 38.00f);
+    // Gara 4: Giro d'Italia Ed. 108 (storica)
+    cout << "Aggiunta tappe a " << g4.nome << " (Ed. " << g4.anno << "):" << endl;
+    if (aggiungi_tappa(g4, 190.0f)) cout << "  Tappa 1 (190.0 km) aggiunta." << endl;
+    if (aggiungi_tappa(g4, 210.0f)) cout << "  Tappa 2 (210.0 km) aggiunta." << endl;
 
-    // Classe c3 (1C Scienze Applicate)
-    aggiungi_costo_libro(c3, 28.50f);
-    aggiungi_costo_libro(c3, 31.00f);
-    aggiungi_costo_libro(c3, 22.00f);
-    aggiungi_costo_libro(c3, 15.00f);
-    aggiungi_costo_libro(c3, 42.00f);
+    // --- TEST 3: lunghezza_media ---
+    cout << "\n[TEST 3] Calcolo della lunghezza media con lunghezza_media()" << endl;
+    lunghezza_media(g1);
+    lunghezza_media(g2);
+    lunghezza_media(g3);
+    lunghezza_media(g4);
+    cout << "Lunghezze medie calcolate ed aggiornate correttamente." << endl;
 
-    cout << "Stato dopo l'inserimento dei costi dei libri:" << endl;
-    cout << "Classe 3A Informatica:" << endl;
-    stampa_lista_libri(c1);
-    cout << "Classe 5B Informatica:" << endl;
-    stampa_lista_libri(c2);
-    cout << "Classe 1C Scienze Applicate:" << endl;
-    stampa_lista_libri(c3);
-    cout << endl;
-
-    // --- TEST 3: stampa_lista_libri ---
-    cout << "[TEST 3] La stampa delle informazioni e stata eseguita con successo via stampa_lista_libri()" << endl;
-    cout << "Tutti i parametri (classe/anno, indirizzo, quantita, singoli costi, media) sono stati verificati." << endl;
-    cout << endl;
-
-    // --- TEST 4: sconto ---
-    cout << "[TEST 4] Applicazione dello sconto con sconto()" << endl;
-    cout << "Applichiamo 3.50 EUR di sconto all'ultimo libro della classe 3A (da 19.99 EUR a 16.49 EUR)..." << endl;
-    cout << "Classe 3A prima dello sconto:" << endl;
-    stampa_lista_libri(&c1);
-
-    // Eseguiamo lo sconto
-    sconto(*c3, 3.5f);
-
-    cout << "Classe 3A dopo lo sconto (ultimo libro e media ricalcolati):" << endl;
-    stampa_lista_libri(&c1);
-    cout << endl;
+    // --- TEST 4: stampa_gara ---
+    cout << "\n[TEST 4] Stampa dei dettagli della gara con stampa_gara()" << endl;
+    cout << "--------------------------------------------------" << endl;
+    stampa_gara(g1);
+    cout << "--------------------------------------------------" << endl;
+    stampa_gara(g2);
+    cout << "--------------------------------------------------" << endl;
 
     return 0;
 }
