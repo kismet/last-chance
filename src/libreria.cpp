@@ -1,8 +1,6 @@
 #include <iostream>
 #include "../inc/libreria.h"
-/**
-* Calcola la media di punteggi
- */
+
 void tratta_media(Viaggio_t &x) {
 
     if (x.numero_tratte == 0) {
@@ -32,6 +30,19 @@ bool aggiungi_tratta(Viaggio_t &x, float km) {
     tratta_media(x);
 
     return true;
+}
+
+void crea_viaggio(Viaggio_t &x, string p, string d) {
+    
+    x.partenza = p;
+    x.destinazione = d;
+    x.numero_tratte = 0;
+    x.media = 0;
+
+    for (int i = 0; i < MAX_TRATTE; i++) {
+        x.tratte[i] = 0;
+    }
+
 }
 
 /**
