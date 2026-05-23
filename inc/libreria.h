@@ -2,6 +2,11 @@
 // Created by stefy on 22/05/2026.
 //
 
+// Autore: Ciardelli Alessandro
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   B
+
 #ifndef LAST_CHANCE_LIBRERIA_H
 #include "libreria_tipi.h"
 
