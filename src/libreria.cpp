@@ -3,6 +3,8 @@
 // Classe: 3CI
 // Fila:   D
 
+#include <iostream>
+#include <ostream>
 #include "C:\Users\esposito.lorenzo/Documents/last-chance/inc/libreria_tipi.h"
 
 /**
@@ -40,4 +42,19 @@ bool aggiungi_tappa(Gara_Tappe_t &x, float p) {
 void crea_gara(Gara_Tappe_t &x, string n, int e) {
     x.nome = n;
     x.anno = e;
+}
+
+/**
+ * Stampa tutte le informazioni della gara a tappe x: nome, edizione, numero di tappe,
+ * lunghezza di ogni tappa,  e infine la media
+ */
+void stampa_gara(Gara_Tappe_t *x) {
+    cout << x->nome << ", ";
+    cout << x-> anno << ", ";
+    cout << x->num_tappe << ", ";
+    for (int i = 0; i < x->num_tappe; i++) {
+        cout << "tappa " << i+1 << ": " << x->tappe[i] << ", ";
+    }
+    lunghezza_media(x);
+    cout << x->lunghezza_media_tappe << endl;
 }
