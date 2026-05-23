@@ -18,7 +18,7 @@ typedef struct Gara_Tappe {
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                    -1, -1, -1, -1, -1, -1}; //i km per ogni tappa
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; //i km per ogni tappa
     int num_tappe; //il numero di tappe in archivio
     float lunghezza_media_tappe;  //media della lunghezza delle tappe
 } Gara_Tappe_t;

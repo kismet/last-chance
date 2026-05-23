@@ -30,6 +30,7 @@ bool aggiungi_tappa(Gara_Tappe_t &x, float p) {
         if (x.tappe[i] == -1) {
             aggiuntaPossibile = true;
             x.tappe[i] = p;
+            x.num_tappe++;
             return aggiuntaPossibile;
         }
     }
