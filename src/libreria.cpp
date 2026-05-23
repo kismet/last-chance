@@ -16,15 +16,21 @@ void tratta_media(Viaggio_t &x) {
  * Aggiunge il km kilometri al viaggio x, se ci sono posti liberi e altrimenti restituisce false
  */
 bool aggiungi_tratta(Viaggio_t &x, float km) {
-
-    return false;
+    if (x.numero_tratte > N_FERMATE_STOP) {
+        return false;
+    }
+    x.tratte[x.numero_tratte] = km;
+    x.numero_tratte++;
+    return true;
 }
 
 /**
  * Inizializza un pilota, dandogli una partenza p e una destinazione d
  */
 void crea_viaggio(Viaggio_t &x, string p, string d) {
-
+    x.numero_tratte++;
+    x.partenza = p;
+    x.destinazione = d;
 }
 
 /**
@@ -32,15 +38,16 @@ void crea_viaggio(Viaggio_t &x, string p, string d) {
  * e infine la distanza media di ogni tratta
  */
 void stampa_viaggio(Viaggio_t &x) {
-    std::cout << "partenza: " << x.partenza;
-    std::cout << "destinazione: " << x.destinazione;
-    std::cout << "tratte: ";
+    cout << "partenza: " << x.partenza << endl;
+    cout << "destinazione: " << x.destinazione << endl;
+    cout << "chilometri tratte: ";
     for (int i = 0; i < N_FERMATE_STOP; i++) {
-        std::cout << x.numero_tratte << ", ";
+        cout << x.tratte[i] << ", ";
     }
-    std::cout << "numero di tratte fino ad ora: " << x.numero_tratte;
-    std::cout << "media: ";
-    cout << tratta_media(x);
+    cout << endl;
+    cout << "numero di tratte fino ad ora: " << x.numero_tratte << endl;
+    tratta_media(x);
+    cout << "media: " << x.media << endl;
 }
 
 /**
