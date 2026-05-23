@@ -1,5 +1,10 @@
+// Autore: Capezzuoli Leonardo
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   A
 #include <iostream>
 #include "inc/libreria_tipi.h"
+#include "src/libreria.cpp"
 
 using namespace std;
 
