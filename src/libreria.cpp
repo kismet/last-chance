@@ -52,6 +52,6 @@ Libri_t* libro_economico(Libri_t elenchi[], int dim) {
  * Restituisce il nome della scuderia che ha fatto più punti
  * BONUS: per chi ha diritto alla riduzione
  */
-string scuderia_campione(Pilota_t pilots[], int dim) {
+string scuderia_campione(Libri_t elenchi[], int dim) {
 
 }
