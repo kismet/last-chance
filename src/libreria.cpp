@@ -1,4 +1,6 @@
+#include <iostream>
 #include "../inc/libreria_tipi.h"
+
 
 /**
 * Calcola la media di km di compiere in questa gara
@@ -44,7 +46,17 @@ void crea_gara(Gara_Tappe_t &x, string n, int e) {
  * Stampa tutte le informazioni della gara a tappe x: nome, edizione, numero di tappe,
  * lunghezza di ogni tappa,  e infine la media
  */
-void stampa_gara(Gara_Tappe_t *x);
+void stampa_gara(Gara_Tappe_t *x) {
+    cout<<"nome della gara: "<<x->nome<<endl;
+    cout<<"edizione numero: "<<x->anno<<endl;
+    cout<<"numero di tappe: "<<x->num_tappe<<endl;
+    for (int i = 0; i<N_MASSIMO_TAPPE; i++) {
+        if (x->tappe[i] != -1) {
+            cout<<"tappa numero: "<<i<<" lunghezza (km): "<<x->tappe[i]<<endl;
+        }
+    }
+    cout<<"media dei kilometri: "<<x->lunghezza_media_tappe<<endl;
+}
 
 /**
  * Togli x km dall'ultima tappa

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "inc/libreria_tipi.h"
+#include "inc/libreria.h"
 
 using namespace std;
 
@@ -52,12 +53,15 @@ int main() {
     lunghezza_media(g4);
     cout << "Lunghezze medie calcolate ed aggiornate correttamente." << endl;
 
+    Gara_Tappe_t *pg1 = &g1;
+    Gara_Tappe_t *pg2 = &g2;
+
     // --- TEST 4: stampa_gara ---
     cout << "\n[TEST 4] Stampa dei dettagli della gara con stampa_gara()" << endl;
     cout << "--------------------------------------------------" << endl;
-    stampa_gara(g1);
+    stampa_gara(pg1);
     cout << "--------------------------------------------------" << endl;
-    stampa_gara(g2);
+    stampa_gara(pg2);
     cout << "--------------------------------------------------" << endl;
 
     return 0;
