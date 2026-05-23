@@ -62,7 +62,29 @@ void stampa_gara(Gara_Tappe_t *x) {
  * Togli x km dall'ultima tappa
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void trasferimento(Gara_Tappe_t *s, float km);
+void trasferimento(Gara_Tappe_t *s, float km) {
+    int indiceUltimaGara;
+    for (int i = 0; i<N_MASSIMO_TAPPE; i++) {
+        if (s->tappe[i] != -1) {
+            indiceUltimaGara = i;
+        }
+    }
+    //se negativo tolgo km al precedente
+    for (int i = indiceUltimaGara; i>=0; i--) {
+        if (km != 0) {
+            if (s->tappe[i] < km) {
+                km -= s->tappe[i];
+                s->tappe[i] = 0;
+            }else if (s->tappe[i] > km) {
+                s->tappe[i] -= km;
+                km = 0;
+            }else if (s->tappe[i] == km) {
+                km = 0;
+                s->tappe[i] = 0;
+            }
+        }
+    }
+}
 
 /**
  * Restituisce la gara più lunga
