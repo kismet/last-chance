@@ -52,13 +52,32 @@ int main() {
     lunghezza_media(g4);
     cout << "Lunghezze medie calcolate ed aggiornate correttamente." << endl;
 
-    // --- TEST 4: stampa_gara ---
-    cout << "\n[TEST 4] Stampa dei dettagli della gara con stampa_gara()" << endl;
+    // --- TEST 4: trasferimento ---
+    cout << "\n[TEST 4] Tolgo Km all'ultima gara." << endl;
+    // Tolgo 10 km a ogni gara
+    // Creo puntatori alle gare
+    Gara_Tappe_t* pg1 = &g1;
+    Gara_Tappe_t* pg2 = &g2;
+    Gara_Tappe_t* pg3 = &g3;
+    trasferimento( pg1, 10 );
+    trasferimento( pg2, 10 );
+    trasferimento( pg3, 10 );
+
+    // Ricalcolo le medie
+    lunghezza_media(g1);
+    lunghezza_media(g2);
+    lunghezza_media(g3);
+
+    // --- TEST 5: stampa_gara ---
+    cout << "\n[TEST 5] Stampa dei dettagli della gara con stampa_gara()" << endl;
     cout << "--------------------------------------------------" << endl;
-    stampa_gara(g1);
+    stampa_gara(pg1);
     cout << "--------------------------------------------------" << endl;
-    stampa_gara(g2);
+    stampa_gara(pg2);
     cout << "--------------------------------------------------" << endl;
+
+
+
 
     return 0;
 }
