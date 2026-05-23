@@ -5,6 +5,11 @@
 
 using namespace std;
 
+// Autore: Ciardelli Alessandro
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   B
+
 int main() {
 
     // --- TEST 1: crea_lista_libri ---
