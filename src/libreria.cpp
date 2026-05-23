@@ -93,10 +93,15 @@ Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim) {
     // Di base lo faccio puntare alla prima gara
     Gara_Tappe_t* garaLunga = &gare[0];
 
+    float totaleI = 0;
+    float totaleMax = 0;
+
     // Parto da secondo elemento dell'array
     for ( int i = 1; i < dim; i++ ) {
+        totaleI = gare[i].lunghezza_media_tappe * gare[i].num_tappe;
+        totaleMax = garaLunga->lunghezza_media_tappe;
 
-        if ( gare[i].lunghezza_media_tappe > garaLunga->lunghezza_media_tappe ) {
+        if ( totaleI > totaleMax ) {
             garaLunga = &gare[i];
         }
     }
