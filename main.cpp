@@ -22,11 +22,11 @@ int main() {
     crea_pilota(p3, "Verstappen", "Red Bull");
 
     cout << "Pilota 1 creato:" << endl;
-    stampa_pilota(p1);
+    stampa_pilota(&p1);
     cout << "Pilota 2 creato:" << endl;
-    stampa_pilota(p2);
+    stampa_pilota(&p2);
     cout << "Pilota 3 creato:" << endl;
-    stampa_pilota(p3);
+    stampa_pilota(&p3);
     cout << endl;
 
     // --- TEST 2: aggiungi_granpremio e calcola_media ---
@@ -52,11 +52,11 @@ int main() {
 
     cout << "Stato dopo l'inserimento dei Gran Premi:" << endl;
     cout << "Leclerc:" << endl;
-    stampa_pilota(p1);
+    stampa_pilota(&p1);
     cout << "Hamilton:" << endl;
-    stampa_pilota(p2);
+    stampa_pilota(&p2);
     cout << "Verstappen:" << endl;
-    stampa_pilota(p3);
+    stampa_pilota(&p3);
     cout << endl;
 
     return 0;
