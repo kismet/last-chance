@@ -1,6 +1,7 @@
 #include "../inc/libreria.h"
 #include "../inc/libreria_tipi.h"
 #include <iostream>
+#include <vector>
 /**
 * Calcola la media di punteggi
  */
@@ -85,5 +86,27 @@ Pilota_t* campione_del_mondo(Pilota_t pilots[], int dim) {
  * Restituisce il nome della scuderia che ha fatto più punti
  * BONUS: per chi ha diritto alla riduzione
  */
-string scuderia_campione(Pilota_t pilots[], int dim);
+string scuderia_campione(Pilota_t pilots[], int dim) {
+    vector<string> arrScuderie;
+    for (int i = 0; i < dim; i++) {
+        arrScuderie.push_back(pilots[i].scuderia);
+    }
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < dim; j++) {
+            if (arrScuderie[i + 1] == arrScuderie[j]) {
+                arrScuderie[i].erase();
+            }
+        }
+    }
+    int puntiScuderia[arrScuderie.size()];
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < dim; j++) {
+            if (pilots[i].scuderia == arrScuderie[j]) {
+                for (int k = 0; k < dim; k++) {
+                    puntiScuderia[i] = puntiScuderia[i] + pilots[i].punti[k];
+                }
+            }
+        }
+    }
+}
 
