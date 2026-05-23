@@ -28,17 +28,10 @@ void costo_medio_libri(Libri_t &x) {
 bool aggiungi_costo_libro(Libri_t &x, float p) {
     int cont=0;
     int salvaI;
-    for (int i=0; i<x.num_libri; i++) {
-        if (x.costo[i]==0) {
-            cont++;
-            if (cont==0) {
-                salvaI=i;
-            }
-        }
-    }if (cont==0) {
-        return false;
-    }
-    x.costo[salvaI]=p;
+    if (N_MATERIE==x.num_libri) return false;
+    x.costo[x.num_libri-1]=p;
+    x.num_libri++;
+    costo_medio_libri(x);
         return true;
 }
 
@@ -52,6 +45,7 @@ void crea_lista_libri(Libri_t &x, string c, string i) {
     cin>> x.indirizzo;
     x.media=0;
     x.num_libri=0;
+
 }
 
 /**
@@ -74,20 +68,13 @@ void stampa_lista_libri(Libri_t *x) {
  * OPZIONALE: per chi ha diritto alla riduzione
  */
 void sconto(Libri_t *s, float punti) {
-    int salvaI;
-    int cont=0;
-    if (s->costo[0]==0) {
+
+    if (s->num_libri==0) {
         cout<<"non ci sono libri in elenco"<< endl;
     }else {
-        for (int i=0; i<s->num_libri; i++) {
-            if (s->costo[i+1]=0) {
-                if (cont==0) {
-                    salvaI=i;
-                    cont++;
-                }
-            }
-        }s->costo[salvaI]-=punti;
+        s->costo[s->num_libri-1]-=punti;
     }
+    costo_medio_libri(*s);
 }
 
 /**
