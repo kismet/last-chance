@@ -10,10 +10,10 @@ using namespace std;
 
 
 int main() {
-
     // --- TEST 1: crea_pilota ---
     cout << "[TEST 1] Inizializzazione dei piloti con crea_pilota()" << endl;
     Pilota_t p1, p2, p3;
+    Pilota_t piloti[] = {p1, p2, p3};
     crea_pilota(p1, "Leclerc", "Ferrari");
     crea_pilota(p2, "Hamilton", "Ferrari");
     crea_pilota(p3, "Verstappen", "Red Bull");
@@ -55,6 +55,11 @@ int main() {
     cout << "Verstappen:" << endl << flush;
     stampa_pilota(&p3);
     cout << endl << flush;
+
+    cout << "test" << '\n';
+
+    Pilota_t *campione = campione_del_mondo(piloti, 3);
+    cout << &campione->nome;
 
     return 0;
 }
