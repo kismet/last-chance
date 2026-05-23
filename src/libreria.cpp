@@ -88,7 +88,8 @@ Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim) {
     // Di base lo faccio puntare alla prima gara
     Gara_Tappe_t* garaLunga = &gare[0];
 
-    for ( int i = 0; i < dim; i++ ) {
+    // Parto da secondo elemento dell'array
+    for ( int i = 1; i < dim; i++ ) {
 
         if ( gare[i].lunghezza_media_tappe > garaLunga->lunghezza_media_tappe ) {
             garaLunga = &gare[i];
@@ -107,9 +108,16 @@ string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim) {
         return ".";
     }
 
+    // Presumo che sia la prima gara e se ne trovo una più lunga aggiorno i valori
     string nomeGaraLunga = gare[0].nome;
     float mediaGaraLunga = gare[0].lunghezza_media_tappe;
 
-    
+    // Parto da secondo elemento dell'array
+    for ( int i = 1; i < dim; i++ ) {
+        if ( gare[i].lunghezza_media_tappe > mediaGaraLunga ) {
+            nomeGaraLunga = gare[i].nome;
+        }
+    }
 
+    return nomeGaraLunga;
 }
