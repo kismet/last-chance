@@ -4,4 +4,5 @@ project(last_chance)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(last_chance main.cpp src/libreria.cpp
-        inc/libreria.h)
+        inc/libreria.h
+        inc/libreria_tipi.h)
