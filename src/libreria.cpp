@@ -1,7 +1,23 @@
+// Autore: salatti dario
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   B
+
+#include "../inc/libreria_tipi.h"
+#include "../inc/libreria.h"
+#include "iostream"
+
 /**
 * Calcola la media di punteggi
  */
 void calcola_media(Pilota_t &x);
+
+int s = 0;
+
+for (int i = 0; i < x.n_granpremi; i++) {
+    s = s + x.punteggi[i];
+}
+x.media = s / x.n_granpremi;
 
 /**
  * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
@@ -12,6 +28,13 @@ bool aggiungi_granpremio(Pilota_t &x, int p);
  * Inizializza un pilota, dandogli un nome n e una scuderia s
  */
 void crea_pilota(Pilota_t &x, string n, string s);
+{
+    x.nome = n
+    x.scuderia = s
+
+    x.n_granpremi = 0
+    x.media = 0;
+}
 
 /**
  * Stampa tutte le informazioni del pilota x: nome, cognome, numero di gran premi e punteggio per ogni gran premio
