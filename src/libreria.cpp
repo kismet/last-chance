@@ -55,7 +55,7 @@ void stampa_gara(Gara_Tappe_t *x) {
     for (int i = 0; i < x->num_tappe; i++) {
         cout << "tappa " << i+1 << ": " << x->tappe[i] << ", ";
     }
-    lunghezza_media(x);
+    lunghezza_media(*x);
     cout << x->lunghezza_media_tappe << endl;
 }
 
