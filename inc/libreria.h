@@ -1,6 +1,10 @@
 //
 // Created by stefy on 22/05/2026.
 //
+// Autore: [Zoppi] [Joele]
+// Data: 2026/05/23
+// Classe: 3CI
+// Fila: Fila A]
 
 #ifndef LAST_CHANCE_LIBRERIA_H
 #include "libreria_tipi.h"
@@ -8,7 +12,7 @@
 /**
  * Calcola la media di punteggi
  */
-void calcola_media(Pilota_t &x);
+float calcola_media(Pilota_t &x);
 
 /**
  * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false

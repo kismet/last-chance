@@ -1,29 +1,71 @@
+// Autore: [Zoppi] [Joele]
+// Data: 2026/05/23
+// Classe: 3CI
+// Fila: Fila A]
+
+#include <iostream>
+#include "../inc/libreria.h"
 /**
 * Calcola la media di punteggi
  */
-void calcola_media(Pilota_t &x);
+float calcola_media(Pilota_t &x) {
+int somma=0;
+float media =0;
+    for () {
+
+        somma= somma+p;
+        media=somma;
+
+    };
+
+};
 
 /**
  * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
  */
-bool aggiungi_granpremio(Pilota_t &x, int p);
+bool aggiungi_granpremio(Pilota_t &x, int p) {
+
+    if () {
+
+
+    }
+    else {
+        return false;
+    }
+};
 
 /**
  * Inizializza un pilota, dandogli un nome n e una scuderia s
  */
-void crea_pilota(Pilota_t &x, string n, string s);
+void crea_pilota(Pilota_t &x, string n, string s) {
+
+    Pilota_t p1, p2, p3;
+    crea_pilota(p1, n, s);
+    crea_pilota(p2, n, s);
+    crea_pilota(p3, n, s);
+
+};
 
 /**
  * Stampa tutte le informazioni del pilota x: nome, cognome, numero di gran premi e punteggio per ogni gran premio
  * e infine la media
  */
-void stampa_pilota(Pilota_t *x);
+void stampa_pilota(Pilota_t *x,p1,p2,p3) {
+
+    stampa_pilota(p1);
+    stampa_pilota(p2);
+    stampa_pilota(p3);
+    cout << endl;
+};
 
 /**
  * Togli p punti dall'ultimo piazzamento del pilota x
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void retrocedi(Pilota_t *s, float punti);
+void retrocedi(Pilota_t *s, float punti) {
+
+
+};
 
 /**
  * Restituisce il Pilota campione del mondo (quello con più punti)

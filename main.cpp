@@ -4,6 +4,29 @@
 using namespace std;
 
 
+void crea_pilota(Pilota_t &x, string n, string s) {
+    Pilota_t p1, p2, p3;
+    crea_pilota(p1, n, s);
+    crea_pilota(p2, n, s);
+    crea_pilota(p3, n, s);
+};
+void stampa_pilota(Pilota_t *x) {
+
+    stampa_pilota(p1);
+    stampa_pilota(p2);
+    stampa_pilota(p3);
+    cout << endl;
+};
+bool aggiungi_granpremio(Pilota_t &x, int p) {
+
+    if (Pilota_t &x ==) {
+
+
+    };
+    else {
+        return false;
+    }
+};
 int main() {
 
     // --- TEST 1: crea_pilota ---
