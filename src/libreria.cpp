@@ -21,3 +21,15 @@ void lunghezza_media(Gara_Tappe_t &x) {
         x.lunghezza_media_tappe = somma_km_tappe/x.num_tappe;
     }
 }
+
+/**
+ * Aggiunge il p kilometri all'elenco di tappe x se ci sono posti liberi e altrimenti restituisce false
+ */
+bool aggiungi_tappa(Gara_Tappe_t &x, float p) {
+    if (x.num_tappe < N_MASSIMO_TAPPE) {
+        x.tappe[x.num_tappe] = p;
+        x.num_tappe++;
+        return true;
+    }
+    return false;
+}
