@@ -36,7 +36,7 @@ void sconto(Libri_t *s, float punti);
  * Restituisce il costo del libro più economico
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Libri_t* libro_economico(Libri_t elenchi[], int dim);
+float libro_economico(Libri_t elenchi[], int dim);
 
 /**
  * Indirizzo più impegnativo per le famiglie, restituisce il nome dell'indirizzo che il totale dei costi dei

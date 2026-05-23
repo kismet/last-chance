@@ -1,39 +1,116 @@
-/**
-* Calcola la media di punteggi
- */
-void calcola_media(Pilota_t &x);
+//
+// Created by stefy on 22/05/2026.
+//
+// Autore: Tosi Gianmarcp
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   B
+using namespace std;
+#include <iostream>
+#include "../inc/libreria.h"
+#include "../inc/libreria_tipi.h"
 
 /**
- * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
+ * Calcola la media dei costi dei libri
  */
-bool aggiungi_granpremio(Pilota_t &x, int p);
+void costo_medio_libri(Libri_t &x) {
+    float somma=0;
+    for (int i=0; i<x.num_libri; i++) {
+        somma+=x.costo[i];
+    }
+    x.media=somma/x.num_libri;
+}
+
 
 /**
- * Inizializza un pilota, dandogli un nome n e una scuderia s
+ * Aggiunge il p prezzo all'elenco dei libri x se ci sono posti liberi e altrimenti restituisce false
  */
-void crea_pilota(Pilota_t &x, string n, string s);
+bool aggiungi_costo_libro(Libri_t &x, float p) {
+    int cont=0;
+    int salvaI;
+    for (int i=0; i<x.num_libri; i++) {
+        if (x.costo[i]==0) {
+            cont++;
+            if (cont==0) {
+                salvaI=i;
+            }
+        }
+    }if (cont==0) {
+        return false;
+    }
+    x.costo[salvaI]=p;
+        return true;
+}
 
 /**
- * Stampa tutte le informazioni del pilota x: nome, cognome, numero di gran premi e punteggio per ogni gran premio
- * e infine la media
+ * Inizializza un lista libri indicando classe e indirizzo
  */
-void stampa_pilota(Pilota_t *x);
+void crea_lista_libri(Libri_t &x, string c, string i) {
+   cout<<"di che classe sei?"<< endl;
+    cin>> x.anno;
+    cout<<"di che indirizzo sei?"<< endl;
+    cin>> x.indirizzo;
+    x.media=0;
+    x.num_libri=0;
+}
 
 /**
- * Togli p punti dall'ultimo piazzamento del pilota x
+ * Stampa tutte le informazioni della lista dei libri  x: classe, indirizzo, numero di libri impiegati, il costo di ogni
+ * libro e infine la media
+ */
+void stampa_lista_libri(Libri_t *x) {
+    cout<<"classe: "<< x->anno << endl;
+    cout<<"indirizzo: "<< x->indirizzo << endl;
+    cout<<"numero libri: "<< x->num_libri << endl;
+    for (int i=0; i<x->num_libri; i++) {
+        cout<<"libri: "<< x->costo[i] << endl;
+    }
+    cout<<"media: "<< x->media << endl;
+
+}
+
+/**
+ * Togli x euro dal prezzo dall'ultimo libro in elenco
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void retrocedi(Pilota_t *s, float punti);
+void sconto(Libri_t *s, float punti) {
+    int salvaI;
+    int cont=0;
+    if (s->costo[0]==0) {
+        cout<<"non ci sono libri in elenco"<< endl;
+    }else {
+        for (int i=0; i<s->num_libri; i++) {
+            if (s->costo[i+1]=0) {
+                if (cont==0) {
+                    salvaI=i;
+                    cont++;
+                }
+            }
+        }s->costo[salvaI]-=punti;
+    }
+}
 
 /**
- * Restituisce il Pilota campione del mondo (quello con più punti)
+ * Restituisce il costo del libro più economico
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Pilota_t* campione_del_mondo(Pilota_t pilots[], int dim);
+float libro_economico(Libri_t elenchi[], int dim) {
+    double economico=0;
+    for (int i=0; i<dim; i++) {
+        for (int j=0; j<elenchi[i].num_libri; j++) {
+            if (economico<elenchi[i].costo[j]) {
+                economico=elenchi[i].costo[j];
+            }
+        }
+
+    }
+    return economico;
+}
 
 /**
- * Restituisce il nome della scuderia che ha fatto più punti
- * BONUS: per chi ha diritto alla riduzione
+ * Indirizzo più impegnativo per le famiglie, restituisce il nome dell'indirizzo che il totale dei costi dei
+ * libri maggiore
+ * BONUS: per TUTTI
  */
-string scuderia_campione(Pilota_t pilots[], int dim);
+string scuderia_campione(Libri_t elenchi[], int dim);
 

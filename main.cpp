@@ -1,6 +1,11 @@
+// Autore: Tosi Gianmarcp
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   B
 #include <iostream>
 #include <iomanip>
 #include "inc/libreria_tipi.h"
+#include "inc/libreria.h"
 
 using namespace std;
 
@@ -45,11 +50,11 @@ int main() {
 
     cout << "Stato dopo l'inserimento dei costi dei libri:" << endl;
     cout << "Classe 3A Informatica:" << endl;
-    stampa_lista_libri(c1);
+    stampa_lista_libri(&c1);
     cout << "Classe 5B Informatica:" << endl;
-    stampa_lista_libri(c2);
+    stampa_lista_libri(&c2);
     cout << "Classe 1C Scienze Applicate:" << endl;
-    stampa_lista_libri(c3);
+    stampa_lista_libri(&c3);
     cout << endl;
 
     // --- TEST 3: stampa_lista_libri ---
@@ -64,7 +69,7 @@ int main() {
     stampa_lista_libri(&c1);
 
     // Eseguiamo lo sconto
-    sconto(*c3, 3.5f);
+    sconto(&c3, 3.5f);
 
     cout << "Classe 3A dopo lo sconto (ultimo libro e media ricalcolati):" << endl;
     stampa_lista_libri(&c1);
