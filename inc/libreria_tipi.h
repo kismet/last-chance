@@ -17,7 +17,6 @@ uint16_t const N_GRAN_PREMI = 22;
 
 typedef struct Pilota {
     string nome;
-    string cognome; //cognome del pilota
     string scuderia; //nome della scuderia a cui appartiene
     int punti[N_GRAN_PREMI]; //i punti presi in ogni gran premio
     int numero_gp; //il numero di gran premi svolti fino a oggi
@@ -25,5 +24,3 @@ typedef struct Pilota {
 } Pilota_t;
 
 #endif //LAST_CHANCE_LIBRERIA_TIPI_H
-
-//test

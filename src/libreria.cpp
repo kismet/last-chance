@@ -10,9 +10,11 @@
 * Calcola la media di punteggi
  */
 void calcola_media(Pilota_t &x) {
-    int sum;
+    int sum = 0;
     for (int i : x.punti) {
-        sum = sum + i;
+        if (i != -1) {
+            sum = sum + i;
+        }
     }
     x.media = sum / x.numero_gp;
 }
@@ -21,12 +23,16 @@ void calcola_media(Pilota_t &x) {
  * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
  */
 bool aggiungi_granpremio(Pilota_t &x, int p) {
-    for (int i = 0; i < x.numero_gp; i++) {
-        if (x.punti[i] < 0) {
+    int grandezza = 22;
+    for (int i = 0; i < grandezza; i++) {
+        if (x.punti[i] == -1) {
             x.punti[i] = p;
+            x.numero_gp = x.numero_gp + 1;
+            calcola_media(x);
             return true;
         }
     }
+    calcola_media(x);
     return false;
 }
 
@@ -40,6 +46,8 @@ void crea_pilota(Pilota_t &x, string n, string s) {
     for (int i = 0; i < numGP; i++) {
         x.punti[i] = -1;
     }
+    x.media = 0;
+    x.numero_gp = 0;
 }
 
 /**
@@ -48,11 +56,13 @@ void crea_pilota(Pilota_t &x, string n, string s) {
  */
 void stampa_pilota(Pilota_t *x) {
     std::cout << x->nome << "\n";
-    std::cout << x->cognome << "\n";
     std::cout << x->numero_gp << "\n";
     for (int i : x->punti) {
-        std::cout << i << "\n";
+        if (i != -1) {
+            std::cout << i << ' ';
+        }
     }
+    std::cout << "\n";
     std::cout << x->media << "\n";
 }
 
@@ -62,7 +72,7 @@ void stampa_pilota(Pilota_t *x) {
  */
 void retrocedi(Pilota_t *s, float punti) {
     for (int i = s->numero_gp; i > 0; i--) {
-        s->punti[i] = -1;
+        s->punti[i] = s->punti[i] - punti -1;
     }
 }
 
@@ -113,6 +123,4 @@ string scuderia_campione(Pilota_t pilots[], int dim) {
         }
     }
 }
-
-//test
 
