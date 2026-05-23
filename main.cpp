@@ -64,5 +64,12 @@ int main() {
     stampa_gara(pg2);
     cout << "--------------------------------------------------" << endl;
 
+    // --- TEST 5: gara_piu_lunga ---
+    cout << "\n[TEST 5] Trovare la gara piu' lunga con gara_piu_lunga()" << endl;
+    cout << "--------------------------------------------------" << endl;
+    Gara_Tappe_t gare[4] = {g1, g2, g3, g4};
+    Gara_Tappe_t *pGaraPiuLunga = gara_piu_lunga( gare, 4);
+    cout << "La gara piu' lunga e': " << pGaraPiuLunga->nome <<endl;
+
     return 0;
 }
