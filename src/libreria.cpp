@@ -4,7 +4,7 @@
 * Calcola la media di km di compiere in questa gara
  */
 void lunghezza_media(Gara_Tappe_t &x) {
-    
+
     //messo un float in caso un valore fosse con la virgola
     float somma = 0, media;
     int tengoConto = 0;
@@ -20,7 +20,17 @@ void lunghezza_media(Gara_Tappe_t &x) {
 /**
  * Aggiunge il p kilometri all'elenco di un cadavedere x se ci sono posti liberi e altrimenti restituisce false
  */
-bool aggiungi_tappa(Gara_Tappe_t &x, float p);
+bool aggiungi_tappa(Gara_Tappe_t &x, float p) {
+    bool aggiuntaPossibile = false;
+    for (int i = 0; i<N_MASSIMO_TAPPE; i++) {
+        if (x.tappe[i] == -1) {
+            aggiuntaPossibile = true;
+            x.tappe[i] = p;
+            return aggiuntaPossibile;
+        }
+    }
+    return aggiuntaPossibile;
+}
 
 /**
  * Inizializza una gara a tappe di nome n ed edizione e
