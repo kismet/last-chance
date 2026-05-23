@@ -1,12 +1,9 @@
-/**
-* Calcola la media di punteggi
- */
-void calcola_media(Pilota_t &x);
+// Autore: Esposito Lorenzo
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   D
 
-/**
- * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
- */
-bool aggiungi_granpremio(Pilota_t &x, int p);
+#include "C:\Users\esposito.lorenzo/Documents/last-chance/inc/libreria_tipi.h"
 
 /**
  * Inizializza un pilota, dandogli un nome n e una scuderia s

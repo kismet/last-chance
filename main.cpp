@@ -1,6 +1,11 @@
+// Autore: Esposito Lorenzo
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   D
+
 #include <iostream>
 #include <string>
-#include "inc/libreria_tipi.h.h"
+#include "inc/libreria_tipi.h"
 
 using namespace std;
 
