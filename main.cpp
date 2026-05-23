@@ -21,7 +21,7 @@ int main() {
     crea_viaggio(v1, "Roma", "Milano");
     crea_viaggio(v2, "Napoli", "Milano");
     crea_viaggio(v3, "Firenze", "Torino");
-    
+    cout << endl << endl;
     // Viaggio 1 (Roma -> Milano)
     aggiungi_tratta(v1, 150.5); // Tratta 1
     aggiungi_tratta(v1, 220.0); // Tratta 2
