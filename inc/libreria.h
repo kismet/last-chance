@@ -24,7 +24,7 @@ void crea_viaggio(Viaggio_t &x, string p, string d);
  * Stampa tutte le informazioni del viaggio x: partenza, destinazione, numero di tratte, km per ogni tratta
  * e infine la distanza media di ogni tratta
  */
-void stampa_viaggio(Viaggio_t *x);
+void stampa_viaggio(Viaggio_t &x);
 
 /**
  * Togli km kilometri dall'ultimo tratta

@@ -1,40 +1,63 @@
+#include <iostream>
 #include "../inc/libreria_tipi.h"
-/**
-* Calcola la media di punteggi
- */
-void media_tratta(Viaggio_t &x);
+#include "../inc/libreria.h"
 
 /**
- * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
+ * Calcola la media in km delle varie tratte
  */
-bool (Pilota_t &x, int p);
+void tratta_media(Viaggio_t &x) {
+    for (int i = 0; i < N_FERMATE_STOP; i++) {
+        x.media += x.tratte[i];
+    }
+    x.media /= N_FERMATE_STOP;
+}
 
 /**
- * Inizializza un pilota, dandogli un nome n e una scuderia s
+ * Aggiunge il km kilometri al viaggio x, se ci sono posti liberi e altrimenti restituisce false
  */
-void crea_pilota(Pilota_t &x, string n, string s);
+bool aggiungi_tratta(Viaggio_t &x, float km) {
+
+    return false;
+}
 
 /**
- * Stampa tutte le informazioni del pilota x: nome, cognome, numero di gran premi e punteggio per ogni gran premio
- * e infine la media
+ * Inizializza un pilota, dandogli una partenza p e una destinazione d
  */
-void stampa_pilota(Pilota_t *x);
+void crea_viaggio(Viaggio_t &x, string p, string d) {
+
+}
 
 /**
- * Togli p punti dall'ultimo piazzamento del pilota x
+ * Stampa tutte le informazioni del viaggio x: partenza, destinazione, numero di tratte, km per ogni tratta
+ * e infine la distanza media di ogni tratta
+ */
+void stampa_viaggio(Viaggio_t &x) {
+    std::cout << "partenza: " << x.partenza;
+    std::cout << "destinazione: " << x.destinazione;
+    std::cout << "tratte: ";
+    for (int i = 0; i < N_FERMATE_STOP; i++) {
+        std::cout << x.numero_tratte << ", ";
+    }
+    std::cout << "numero di tratte fino ad ora: " << x.numero_tratte;
+    std::cout << "media: ";
+    cout << tratta_media(x);
+}
+
+/**
+ * Togli km kilometri dall'ultimo tratta
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void retrocedi(Pilota_t *s, float punti);
+void scorciatoia(Viaggio_t *s, float punti);
 
 /**
- * Restituisce il Pilota campione del mondo (quello con più punti)
+ * Restituisce il Viaggio più lungo in termini di kilometri
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Pilota_t* campione_del_mondo(Pilota_t pilots[], int dim);
+Viaggio_t* viaggio_lungo(Viaggio_t viaggi[], int dim);
 
 /**
- * Restituisce il nome della scuderia che ha fatto più punti
+ * Restituisce la destinazione che ha il maggior numero di km percorsi che la raggiungono
  * BONUS: per chi ha diritto alla riduzione
  */
-string scuderia_campione(Pilota_t pilots[], int dim);
+string destinazione_principale(Viaggio_t viaggi[], int dim);
 
