@@ -1,4 +1,9 @@
 
+// Autore: Mannucci Marco
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   D
+
 #include "../inc/libreria.h"
 #include "../inc/libreria_tipi.h"
 #include <iostream>
