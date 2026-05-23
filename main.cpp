@@ -16,6 +16,8 @@ int main() {
     Gara_Tappe_t g1, g2, g3, g4;
     Gara_Tappe_t* pg1 = &g1;
     Gara_Tappe_t* pg2 = &g2;
+    Gara_Tappe_t* pg3 = &g3;
+    Gara_Tappe_t* pg4 = &g4;
 
     crea_gara(g1, "Giro d'Italia", 109);
     crea_gara(g2, "Tour de France", 113);
@@ -66,6 +68,27 @@ int main() {
     stampa_gara(pg1);
     cout << "--------------------------------------------------" << endl;
     stampa_gara(pg2);
+    cout << "--------------------------------------------------" << endl;
+    stampa_gara(pg3);
+    cout << "--------------------------------------------------" << endl;
+    stampa_gara(pg4);
+    cout << "--------------------------------------------------" << endl;
+
+    cout << "\n[TEST 5] togliere chilometri con trasferimento()" << endl;
+    trasferimento(pg1, 100);
+    trasferimento(pg2, 100);
+    trasferimento(pg3, 100);
+    trasferimento(pg4, 100);
+
+    cout << "\n[TEST 5] Stampa dei dettagli della gara con stampa_gara()" << endl;
+    cout << "--------------------------------------------------" << endl;
+    stampa_gara(pg1);
+    cout << "--------------------------------------------------" << endl;
+    stampa_gara(pg2);
+    cout << "--------------------------------------------------" << endl;
+    stampa_gara(pg3);
+    cout << "--------------------------------------------------" << endl;
+    stampa_gara(pg4);
     cout << "--------------------------------------------------" << endl;
 
     return 0;
