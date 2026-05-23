@@ -1,3 +1,8 @@
+// Autore: Landucci Gianmarco
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   C
+
 #include <iostream>
 #include "../inc/libreria.h"
 
@@ -34,7 +39,6 @@ bool aggiungi_tratta(Viaggio_t &x, float km) {
 
 void crea_viaggio(Viaggio_t &x, string p, string d) {
 
-    //
     x.partenza = p;
     x.destinazione = d;
     x.numero_tratte = 0;

@@ -1,3 +1,8 @@
+// Autore: Landucci Gianmarco
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   C
+
 //
 // Created by stefy on 22/05/2026.
 //

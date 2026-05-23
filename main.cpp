@@ -1,3 +1,8 @@
+// Autore: Landucci Gianmarco
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   C
+
 #include <iostream>
 #include "inc/libreria.h"
 
