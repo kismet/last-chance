@@ -1,6 +1,8 @@
 //
 // Created by stefy on 22/05/2026.
 //
+#ifndef LIBRERIA_H
+#define LIBRERIA_H
 
 #ifndef LAST_CHANCE_LIBRERIA_H
 #include "libreria_tipi.h"
@@ -48,3 +50,4 @@ string scuderia_campione(Pilota_t pilots[], int dim);
 #define LAST_CHANCE_LIBRERIA_H
 
 #endif //LAST_CHANCE_LIBRERIA_H
+#endif // LIBRERIA_H
