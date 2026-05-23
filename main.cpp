@@ -21,19 +21,7 @@ int main() {
     crea_viaggio(v1, "Roma", "Milano");
     crea_viaggio(v2, "Napoli", "Milano");
     crea_viaggio(v3, "Firenze", "Torino");
-
-    cout << "Viaggio 1 creato:" << endl;
-    stampa_viaggio(v1); // Corretto: passa l'indirizzo &v1
-    cout << "Viaggio 2 creato:" << endl;
-    stampa_viaggio(v2); // Corretto: passa l'indirizzo &v2
-    cout << "Viaggio 3 creato:" << endl;
-    stampa_viaggio(v3); // Corretto: passa l'indirizzo &v3
-    cout << endl;
-
-    // --- TEST 2: aggiungi_tratta e calcola_media ---
-    cout << "[TEST 2] Aggiunta di tratte con aggiungi_tratta()" << endl;
-    cout << "(La media viene ricalcolata automaticamente tramite calcola_media)" << endl << endl;
-
+    
     // Viaggio 1 (Roma -> Milano)
     aggiungi_tratta(v1, 150.5); // Tratta 1
     aggiungi_tratta(v1, 220.0); // Tratta 2
