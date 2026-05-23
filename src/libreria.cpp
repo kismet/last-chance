@@ -44,7 +44,7 @@ void crea_viaggio(Viaggio_t &x, string p, string d) {
     x.numero_tratte = 0;
     x.media = 0;
 
-    // Svuoto tutte le tratte fino a N_FERMATE_STOP
+    // Assegno alla tratta data dal main i valori dati dal main, fino a N_FERMATE_STOP
     for (int i = 0; i < N_FERMATE_STOP; i++) {
         x.tratte[i] = 0;
     }

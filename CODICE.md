@@ -32,7 +32,7 @@ Sostituendo:
    - tratta_media [Punti 1]
    - aggiungi_tratta [Punti 1]
    - crea_viaggio [Punti 0.5]
-   - scorciatoia [Punti 1]
    - stampa_viaggio [Punti 1]
+   - scorciatoia [Punti 1]
    - viaggio_lungo [Punti 1.5]
  - Bonus [Punti 1.5]
