@@ -10,6 +10,7 @@ using namespace std;
 
 int main() {
 
+    cout << endl;
     // --- TEST 1: crea_viaggio ---
     cout << "[TEST 1] Inizializzazione dei viaggi con crea_viaggio()" << endl;
     Viaggio_t v1, v2, v3;
@@ -17,12 +18,20 @@ int main() {
     crea_viaggio(v2, "Napoli", "Milano");
     crea_viaggio(v3, "Firenze", "Torino");
 
+    cout << "-----------------------------------" << endl;
     cout << "Viaggio 1 creato:" << endl;
     stampa_viaggio(&v1); // Corretto: passa l'indirizzo &v1
+    cout << "-----------------------------------" << endl;
+
     cout << "Viaggio 2 creato:" << endl;
     stampa_viaggio(&v2); // Corretto: passa l'indirizzo &v2
+    cout << "-----------------------------------" << endl;
+
     cout << "Viaggio 3 creato:" << endl;
     stampa_viaggio(&v3); // Corretto: passa l'indirizzo &v3
+    cout << "-----------------------------------" << endl;
+
+    cout << endl;
     cout << endl;
 
     // --- TEST 2: aggiungi_tratta e calcola_media ---
@@ -46,20 +55,19 @@ int main() {
 
     cout << "Stato dei viaggi dopo l'inserimento delle tratte:" << endl;
 
-    cout << endl;
-
+    cout << "-----------------------------------" << endl;
     cout << "Viaggio 1 (Roma -> Milano):" << endl;
     stampa_viaggio(&v1);
-
-    cout << endl;
+    cout << "-----------------------------------" << endl;
 
     cout << "Viaggio 2 (Napoli -> Milano):" << endl;
     stampa_viaggio(&v2);
-
-    cout << endl;
+    cout << "-----------------------------------" << endl;
 
     cout << "Viaggio 3 (Firenze -> Torino):" << endl;
     stampa_viaggio(&v3);
+    cout << "-----------------------------------" << endl;
+
     cout << endl;
 
     return 0;
