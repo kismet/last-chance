@@ -12,6 +12,7 @@ using namespace std;
 uint16_t const N_GRAN_PREMI = 22;
 
 typedef struct Pilota {
+    string nome;
     string cognome; //cognome del pilota
     string scuderia; //nome della scuderia a cui appartiene
     int punti[N_GRAN_PREMI]; //i punti presi in ogni gran premio
