@@ -40,10 +40,19 @@ int main() {
     aggiungi_tratta(v3, 90.0f);  // Tratta 4
 
     cout << "Stato dei viaggi dopo l'inserimento delle tratte:" << endl;
+
+    cout << endl;
+
     cout << "Viaggio 1 (Roma -> Milano):" << endl;
     stampa_viaggio(&v1);
+
+    cout << endl;
+
     cout << "Viaggio 2 (Napoli -> Milano):" << endl;
     stampa_viaggio(&v2);
+
+    cout << endl;
+
     cout << "Viaggio 3 (Firenze -> Torino):" << endl;
     stampa_viaggio(&v3);
     cout << endl;
