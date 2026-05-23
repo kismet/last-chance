@@ -3,7 +3,7 @@
 /**
 * Calcola la media di punteggi
  */
-void media_tratta(Viaggio_t &x) {
+void tratta_media(Viaggio_t &x) {
 
     if (x.numero_tratte == 0) {
         x.media = 0;
@@ -20,15 +20,19 @@ void media_tratta(Viaggio_t &x) {
 
 }
 
-/**
- * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
- */
-bool (Pilota_t &x, int p);
+bool aggiungi_tratta(Viaggio_t &x, float km) {
 
-/**
- * Inizializza un pilota, dandogli un nome n e una scuderia s
- */
-void crea_pilota(Pilota_t &x, string n, string s);
+    if (x.numero_tratte >= MAX_TRATTE) {
+        return false;
+    }
+
+    x.tratte[x.numero_tratte] = km;
+    x.numero_tratte ++;
+
+    tratta_media(x);
+
+    return true;
+}
 
 /**
  * Stampa tutte le informazioni del pilota x: nome, cognome, numero di gran premi e punteggio per ogni gran premio
