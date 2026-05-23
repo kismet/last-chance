@@ -1,3 +1,5 @@
+#include "../inc/libreria.h"
+
 #include <iostream>
 #include "../inc/libreria_tipi.h"
 
@@ -90,7 +92,30 @@ void trasferimento(Gara_Tappe_t *s, float km) {
  * Restituisce la gara più lunga
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim);
+Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim) {
+    int indiceGaraPiuLunga;
+    long lunghezzaDaSuperare = 0;
+    for (int i = 0; i<dim; i++) {
+        long lunghezzaGara = calcoloLunghezzaTotaleGara(gare[i]);
+        if (lunghezzaGara > lunghezzaDaSuperare) {
+            indiceGaraPiuLunga = i;
+            lunghezzaDaSuperare = lunghezzaGara;
+        }
+    }
+    Gara_Tappe_t *pIndiceGaraPiuLunga = &gare[indiceGaraPiuLunga];
+    return pIndiceGaraPiuLunga;
+}
+
+//funzione di supporto
+long calcoloLunghezzaTotaleGara(Gara_Tappe_t g) {
+    long lunghezza = 0;
+    for (int i = 0; i<N_MASSIMO_TAPPE; i++) {
+        if (g.tappe[i] != -1) {
+            lunghezza += g.tappe[i];
+        }
+    }
+    return lunghezza;
+}
 
 /**
  * Restituisce il nome della gara che risulta più lunga in km dalla sua prima edizione ad ora

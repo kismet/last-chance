@@ -38,6 +38,9 @@ void trasferimento(Gara_Tappe_t *s, float km);
  */
 Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim);
 
+//funzione di supporto
+long calcoloLunghezzaTotaleGara(Gara_Tappe_t g);
+
 /**
  * Restituisce il nome della gara che risulta più lunga in km dalla sua prima edizione ad ora
  * BONUS: per TUTTI
