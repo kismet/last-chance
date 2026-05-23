@@ -1,3 +1,8 @@
+// Autore: [Clipa] [Amos]
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   [A]
+
 //
 // Created by stefy on 22/05/2026.
 //
