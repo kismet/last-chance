@@ -3,6 +3,8 @@
 //
 
 #ifndef LAST_CHANCE_LIBRERIA_H
+#define LAST_CHANCE_LIBRERIA_H
+
 #include "libreria_tipi.h"
 
 /**
@@ -43,8 +45,5 @@ Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim);
  * BONUS: per TUTTI
  */
 string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim);
-
-
-#define LAST_CHANCE_LIBRERIA_H
 
 #endif //LAST_CHANCE_LIBRERIA_H

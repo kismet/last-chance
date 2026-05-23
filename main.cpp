@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "inc/libreria_tipi.h.h"
+#include "inc/libreria.h"
 
 using namespace std;
 
