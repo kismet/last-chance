@@ -1,5 +1,5 @@
 #include <iostream>
-#include "inc/libreria_tipi.h"
+#include "inc/libreria.h"
 
 using namespace std;
 
@@ -13,11 +13,11 @@ int main() {
     crea_viaggio(v3, "Firenze", "Torino");
 
     cout << "Viaggio 1 creato:" << endl;
-    stampa_viaggio(v1); // Corretto: passa l'indirizzo &v1
+    stampa_viaggio(&v1); // Corretto: passa l'indirizzo &v1
     cout << "Viaggio 2 creato:" << endl;
-    stampa_viaggio(v2); // Corretto: passa l'indirizzo &v2
+    stampa_viaggio(&v2); // Corretto: passa l'indirizzo &v2
     cout << "Viaggio 3 creato:" << endl;
-    stampa_viaggio(v3); // Corretto: passa l'indirizzo &v3
+    stampa_viaggio(&v3); // Corretto: passa l'indirizzo &v3
     cout << endl;
 
     // --- TEST 2: aggiungi_tratta e calcola_media ---

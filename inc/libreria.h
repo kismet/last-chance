@@ -3,6 +3,7 @@
 //
 
 #ifndef LAST_CHANCE_LIBRERIA_H
+#define LAST_CHANCE_LIBRERIA_H
 #include "libreria_tipi.h"
 
 /**
@@ -30,7 +31,7 @@ void stampa_viaggio(Viaggio_t *x);
  * Togli km kilometri dall'ultimo tratta
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void scorciatoia(Viaggio_t *s, float punti);
+void scorciatoia(Viaggio_t *s, float km);
 
 /**
  * Restituisce il Viaggio più lungo in termini di kilometri

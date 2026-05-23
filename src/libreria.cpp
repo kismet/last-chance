@@ -1,8 +1,24 @@
-#include "../inc/libreria_tipi.h"
+#include <iostream>
+#include "../inc/libreria.h"
 /**
 * Calcola la media di punteggi
  */
-void media_tratta(Viaggio_t &x);
+void media_tratta(Viaggio_t &x) {
+
+    if (x.numero_tratte == 0) {
+        x.media = 0;
+        return;
+    }
+
+    float somma = 0;
+
+    for (int i ; i < x.numero_tratte ; i++) {
+        somma += x.tratte[i];
+    }
+
+    x.media = somma / x.numero_tratte;
+
+}
 
 /**
  * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false

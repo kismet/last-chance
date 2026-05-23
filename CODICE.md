@@ -27,7 +27,7 @@ Sostituendo:
  - Completo, sono state implementate tutte le funzioni [Punto 1]
  - Progetto compila ed è possibile eseguire il main [Punto 1]
  - Correzione degli errori nel progetto [Punti 1]
- - Uso corrtto di array, puntatori e struct [Punti 1]
+ - Uso corretto di array, puntatori e struct [Punti 1]
  - Correttezza [Punti 6] divisi in questo modo:
    - tratta_media [Punti 1]
    - aggiungi_tratta [Punti 1]
