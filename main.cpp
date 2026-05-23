@@ -82,5 +82,16 @@ int main() {
     stampa_lista_libri(&c1);
     cout << endl;
 
+    // --- TEST 5: libro_economico e scuderia_campione ---
+    cout << "[TEST 5] La stampa del libro più economico e la scuderia campione:" << endl;
+    Libri_t elenchi[]={c1, c2, c3};
+
+    Libri_t* economico=libro_economico(elenchi, 3);
+    if (economico!=nullptr) {
+        cout<<"Classe col libro più economico: "<<economico->anno<<"("<<economico->indirizzo<<")"<<endl;
+    }
+
+    cout<<"Indirizzo Scuderia Campione: "<<scuderia_campione(elenchi, 3)<<endl;
+
     return 0;
 }
