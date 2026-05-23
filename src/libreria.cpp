@@ -39,10 +39,10 @@ bool aggiungi_costo_libro(Libri_t &x, float p) {
  * Inizializza un lista libri indicando classe e indirizzo
  */
 void crea_lista_libri(Libri_t &x, string c, string i) {
-   cout<<"di che classe sei?"<< endl;
-    cin>> x.anno;
-    cout<<"di che indirizzo sei?"<< endl;
-    cin>> x.indirizzo;
+
+    x.anno=c;
+
+    x.indirizzo=i;
     x.media=0;
     x.num_libri=0;
 
@@ -57,7 +57,7 @@ void stampa_lista_libri(Libri_t *x) {
     cout<<"indirizzo: "<< x->indirizzo << endl;
     cout<<"numero libri: "<< x->num_libri << endl;
     for (int i=0; i<x->num_libri; i++) {
-        cout<<"libri: "<< x->costo[i] << endl;
+        cout<<"costo libri: "<< x->costo[i-1] << endl;
     }
     cout<<"media: "<< x->media << endl;
 
@@ -71,8 +71,11 @@ void sconto(Libri_t *s, float punti) {
 
     if (s->num_libri==0) {
         cout<<"non ci sono libri in elenco"<< endl;
-    }else {
+    }else if (s->costo[s->num_libri-1]>=punti){
         s->costo[s->num_libri-1]-=punti;
+    }
+    else {
+        s->costo[s->num_libri-1]=0;
     }
     costo_medio_libri(*s);
 }

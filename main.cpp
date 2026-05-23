@@ -69,7 +69,7 @@ int main() {
     stampa_lista_libri(&c1);
 
     // Eseguiamo lo sconto
-    sconto(&c3, 3.5f);
+    sconto(&c1, 3.5f);
 
     cout << "Classe 3A dopo lo sconto (ultimo libro e media ricalcolati):" << endl;
     stampa_lista_libri(&c1);
