@@ -2,6 +2,11 @@
 // Created by stefy on 22/05/2026.
 //
 
+// Autore: Esposito Lorenzo
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   D
+
 #ifndef LAST_CHANCE_LIBRERIA_H
 #include "libreria_tipi.h"
 
@@ -33,7 +38,7 @@ void stampa_gara(Gara_Tappe_t *x);
 void trasferimento(Gara_Tappe_t *s, float km);
 
 /**
- * Restituisce la gara più lunga
+ * Restituisce la gara più lunga (relativo a km di tutte le edizioni)
  * OPZIONALE: per chi ha diritto alla riduzione
  */
 Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim);

@@ -76,7 +76,7 @@ void trasferimento(Gara_Tappe_t *s, float km) {
 }
 
 /**
- * Restituisce la gara più lunga
+ * Restituisce la gara più lunga (relativo a km di tutte le edizioni)
  * OPZIONALE: per chi ha diritto alla riduzione
  */
 Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim) {
