@@ -74,3 +74,23 @@ void trasferimento(Gara_Tappe_t *s, float km) {
         }
     }
 }
+
+/**
+ * Restituisce la gara più lunga
+ * OPZIONALE: per chi ha diritto alla riduzione
+ */
+Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim) {
+    for (int i = 0; i < dim; i++) {
+        lunghezza_media(gare[i]);
+    }
+
+    Gara_Tappe_t* piu_lunga = &gare[0];
+
+    for (int i = 1; i < dim; i++) {
+        if (gare[i].lunghezza_media_tappe*gare[i].num_tappe > piu_lunga->lunghezza_media_tappe*piu_lunga->num_tappe) {
+            piu_lunga = &gare[i];
+        }
+    }
+
+    return piu_lunga;
+}
