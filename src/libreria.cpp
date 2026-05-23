@@ -2,6 +2,7 @@
 #include "../inc/libreria.h"
 #include "../inc/libreria_tipi.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -64,5 +65,51 @@ void stampa_gara(Gara_Tappe_t *x) {
         cout << "Tappa " << i + 1 << ": " << x->tappe[i] << endl;
     }
     cout << "Media: " << x->lunghezza_media_tappe << endl;
+
+}
+
+// Togli x km dall'ultima tappa
+void trasferimento(Gara_Tappe_t *s, float km) {
+
+    if ( s->num_tappe > 0 ) {
+        s->tappe[s->num_tappe - 1] -= km;
+        lunghezza_media(*s);
+    }
+}
+
+// Restituisce la gara più lunga
+Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim) {
+
+    if ( dim == 0 ) {
+        return nullptr;
+    }
+
+    // Puntatore alla gara più lunga
+    // Di base lo faccio puntare alla prima gara
+    Gara_Tappe_t* garaLunga = &gare[0];
+
+    for ( int i = 0; i < dim; i++ ) {
+
+        if ( gare[i].lunghezza_media_tappe > garaLunga->lunghezza_media_tappe ) {
+            garaLunga = &gare[i];
+        }
+    }
+
+    return garaLunga;
+
+}
+
+// Restituisce il nome della gara che risulta più lunga in km dalla sua prima edizione ad ora
+string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim) {
+
+    // Se non ci sono gare inserite ritorno nulla
+    if ( dim == 0 ) {
+        return ".";
+    }
+
+    string nomeGaraLunga = gare[0].nome;
+    float mediaGaraLunga = gare[0].lunghezza_media_tappe;
+
+    
 
 }
