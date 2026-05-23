@@ -76,8 +76,17 @@ int main() {
     stampa_gara(pg2);
     cout << "--------------------------------------------------" << endl;
 
+    // Testo gara_piu_lunga e gare_storica_piu_lunga
+    // Creo l'array
+    Gara_Tappe_t gare[3] = { g1, g2, g3 };
 
+    // Stampo gara_piu_lunga
+    Gara_Tappe_t* garaLunga = gara_piu_lunga( gare, 3 );
 
+    cout << garaLunga->nome << endl;
+
+    // Stampo gara_storica_piu_lunga
+    cout << gare_storica_piu_lunga( gare, 3 );
 
     return 0;
 }
