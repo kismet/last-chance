@@ -2,9 +2,15 @@
 // Created by stefy on 22/05/2026.
 //
 
+// Autore: Pandolfi Marco
+// Data:   23/05/2026
+// Classe: 3CI
+// Fila:   b
+
 #ifndef LAST_CHANCE_LIBRERIA_H
 #include "../inc/libreria_tipi.h"
 #include "../inc/libreria.h"
+#include <iostream>
 
 #include "../inc/libreria_tipi.h"
 
@@ -33,6 +39,11 @@ void stampa_lista_libri(Libri_t *x) {
     if (x==nullptr) {
         return;
     }
+    cout<<"Anno: "<<x->anno<<endl;
+    cout<<"Indirizzo: "<<x->indirizzo<<endl;
+    cout<<"Numero libri: "<<x->num_libri<<endl;
+    cout<<"Costo libri: "<<x->costo[x->num_libri-1]<<endl;
+    cout<<"Media: "<<x->media<<endl;
 }
 
 void sconto(Libri_t *s, float punti) {
@@ -70,6 +81,39 @@ string scuderia_campione(Libri_t elenchi[], int dim) {
     if (dim<=0) {
         return "";
     }
+
+    string campione="";
+    float massimo=0.0;
+
+    for (int i=0;i<dim;i++) {
+        string corrente=elenchi[i].indirizzo;
+
+        bool calcolato=false;
+        for (int j=0; j<i; j++) {
+            if (elenchi[j].indirizzo==corrente) {
+                calcolato=true;
+                break;
+            }
+        }
+        if (!calcolato) {
+            float totale=0.0;
+
+            for (int j=0; j<dim; j++) {
+                if (elenchi[j].indirizzo==corrente) {
+                    for (int k=0; k<elenchi[j].num_libri; k++) {
+                        totale+=elenchi[j].costo[k];
+                    }
+                }
+            }
+
+            if (totale>massimo) {
+                massimo=totale;
+                campione=corrente;
+            }
+        }
+    }
+
+    return campione;
 }
 
 
