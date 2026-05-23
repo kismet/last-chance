@@ -3,6 +3,11 @@
 // Classe: 3CI
 // Fila:   [A]
 
+#include "../inc/libreria.h"
+
+#include <iostream>
+
+#include "../inc/libreria_tipi.h"
 /**
 * Calcola la media di punteggi
  */
