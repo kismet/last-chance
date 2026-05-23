@@ -88,10 +88,11 @@ int main() {
 
     // Stampo gara_piu_lunga
     Gara_Tappe_t* garaLunga = gara_piu_lunga( gare, 3 );
-
+    cout << "La gara piu lunga e': " << endl;
     cout << garaLunga->nome << endl;
 
     // Stampo gara_storica_piu_lunga
+    cout << "La gara storica piu lunga e': " << endl;
     cout << gare_storica_piu_lunga( gare, 3 );
 
     return 0;
