@@ -33,3 +33,11 @@ bool aggiungi_tappa(Gara_Tappe_t &x, float p) {
     }
     return false;
 }
+
+/**
+ * Inizializza una gara a tappe di nome n ed edizione e
+ */
+void crea_gara(Gara_Tappe_t &x, string n, int e) {
+    x.nome = n;
+    x.anno = e;
+}
