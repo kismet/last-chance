@@ -55,7 +55,11 @@ void stampa_pilota(Pilota_t *x) {
  * Togli p punti dall'ultimo piazzamento del pilota x
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void retrocedi(Pilota_t *s, float punti);
+void retrocedi(Pilota_t *s, float punti) {
+    for (int i = s->numero_gp; i > 0; i--) {
+        s->punti[i] = -1;
+    }
+}
 
 /**
  * Restituisce il Pilota campione del mondo (quello con più punti)
