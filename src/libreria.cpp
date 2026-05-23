@@ -11,10 +11,10 @@
 float calcola_media(Pilota_t &x) {
 int somma=0;
 float media =0;
-    for () {
+    for (int i = 0; i < x;i++) {
 
-        somma= somma+p;
-        media=somma;
+        somma = somma+p;
+        media = somma/i;
 
     };
 
@@ -25,8 +25,9 @@ float media =0;
  */
 bool aggiungi_granpremio(Pilota_t &x, int p) {
 
-    if () {
+    if (x == ) {
 
+        Pilota_t &x + p;
 
     }
     else {
