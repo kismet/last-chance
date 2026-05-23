@@ -122,4 +122,7 @@ long calcoloLunghezzaTotaleGara(Gara_Tappe_t g) {
  * Restituisce il nome della gara che risulta più lunga in km dalla sua prima edizione ad ora
  * BONUS: per TUTTI
  */
-string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim);
+string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim) {
+    Gara_Tappe_t *pGaraPiuLunga = gara_piu_lunga(gare, dim);
+    return pGaraPiuLunga->nome;
+}
