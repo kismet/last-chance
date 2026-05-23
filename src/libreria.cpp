@@ -65,7 +65,21 @@ void retrocedi(Pilota_t *s, float punti) {
  * Restituisce il Pilota campione del mondo (quello con più punti)
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Pilota_t* campione_del_mondo(Pilota_t pilots[], int dim);
+Pilota_t* campione_del_mondo(Pilota_t pilots[], int dim) {
+    int sum = 0;
+    int tmp = 0;
+    int numeroCampione = 0;
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < pilots[i].numero_gp; j++) {
+            tmp = tmp + pilots[i].punti[j];
+        }
+        if (tmp > sum) {
+            tmp = sum;
+            numeroCampione = i;
+        }
+    }
+    return &pilots[numeroCampione];
+}
 
 /**
  * Restituisce il nome della scuderia che ha fatto più punti
