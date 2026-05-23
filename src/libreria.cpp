@@ -6,31 +6,18 @@
 #include "C:\Users\esposito.lorenzo/Documents/last-chance/inc/libreria_tipi.h"
 
 /**
- * Inizializza un pilota, dandogli un nome n e una scuderia s
+* Calcola la media di km di compiere in questa gara
  */
-void crea_pilota(Pilota_t &x, string n, string s);
-
-/**
- * Stampa tutte le informazioni del pilota x: nome, cognome, numero di gran premi e punteggio per ogni gran premio
- * e infine la media
- */
-void stampa_pilota(Pilota_t *x);
-
-/**
- * Togli p punti dall'ultimo piazzamento del pilota x
- * OPZIONALE: per chi ha diritto alla riduzione
- */
-void retrocedi(Pilota_t *s, float punti);
-
-/**
- * Restituisce il Pilota campione del mondo (quello con più punti)
- * OPZIONALE: per chi ha diritto alla riduzione
- */
-Pilota_t* campione_del_mondo(Pilota_t pilots[], int dim);
-
-/**
- * Restituisce il nome della scuderia che ha fatto più punti
- * BONUS: per chi ha diritto alla riduzione
- */
-string scuderia_campione(Pilota_t pilots[], int dim);
-
+void lunghezza_media(Gara_Tappe_t &x) {
+    if (x.num_tappe == 0) {
+        x.lunghezza_media_tappe = 0;
+    }
+    else
+    {
+        float somma_km_tappe = 0;
+        for (int i = 0; i < x.num_tappe; i++) {
+            somma_km_tappe += x.tappe[i];
+        }
+        x.lunghezza_media_tappe = somma_km_tappe/x.num_tappe;
+    }
+}
