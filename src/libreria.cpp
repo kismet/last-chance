@@ -15,6 +15,7 @@ void tratta_media(Viaggio_t &x) {
         x.media += x.tratte[i];
     }
     x.media /= x.numero_tratte;
+    x.numero_tratte++;
 }
 
 /**
@@ -24,7 +25,8 @@ bool aggiungi_tratta(Viaggio_t &x, float km) {
     if (x.numero_tratte > N_FERMATE_STOP) {
         return false;
     }
-    x.tratte[x.numero_tratte - 1] = km;
+    x.tratte[x.numero_tratte - 2] = km;
+    x.numero_tratte++;
     return true;
 }
 
@@ -46,9 +48,7 @@ void stampa_viaggio(Viaggio_t &x) {
     cout << "destinazione: " << x.destinazione << endl;
     cout << "chilometri tratte: ";
     for (int i = 0; i < N_FERMATE_STOP; i++) {
-        if (x.tratte[i] > 0) {
-            cout << x.tratte[i] << " ";
-        }
+        cout << x.tratte[i] << " ";
     }
     cout << endl;
     cout << "numero di tratte fino ad ora: " << x.numero_tratte << endl;
