@@ -2,6 +2,11 @@
 #include "../inc/libreria_tipi.h"
 #include "../inc/libreria.h"
 
+// Autore: Calcagni Luca
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   C
+
 /**
  * Calcola la media in km delle varie tratte
  */

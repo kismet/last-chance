@@ -5,6 +5,11 @@
 #ifndef LAST_CHANCE_LIBRERIA_H
 #include "libreria_tipi.h"
 
+// Autore: Calcagni Luca
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   C
+
 /**
  * Calcola la media in km delle varie tratte
  */

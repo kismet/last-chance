@@ -1,8 +1,12 @@
 #include <iostream>
 #include "inc/libreria_tipi.h"
 #include "inc/libreria.h"
-
 using namespace std;
+
+// Autore: Calcagni Luca
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   C
 
 int main() {
 

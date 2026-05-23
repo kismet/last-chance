@@ -6,8 +6,12 @@
 #define LAST_CHANCE_LIBRERIA_TIPI_H
 #include <cstdint>
 #include <string>
-
 using namespace std;
+
+// Autore: Calcagni Luca
+// Data:   2026/05/23
+// Classe: 3CI
+// Fila:   C
 
 uint16_t const N_FERMATE_STOP = 22;
 
