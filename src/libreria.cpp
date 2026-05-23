@@ -58,3 +58,19 @@ void stampa_gara(Gara_Tappe_t *x) {
     lunghezza_media(x);
     cout << x->lunghezza_media_tappe << endl;
 }
+
+/**
+ * Togli x km dall'ultima tappa, se il valore diventa negativo la tappa viene eliminata
+ * OPZIONALE: per chi ha diritto alla riduzione
+ */
+void trasferimento(Gara_Tappe_t *s, float km) {
+    if (s->num_tappe != 0) {
+        if (s->tappe[s->num_tappe-1] <= km) {
+            s->tappe[s->num_tappe-1] = 0;
+            s->num_tappe--;
+        }
+        else {
+            s->tappe[s->num_tappe-1] -= km;
+        }
+    }
+}
