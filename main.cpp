@@ -14,7 +14,9 @@ int main() {
     // --- TEST 1: crea_gara ---
     cout << "\n[TEST 1] Inizializzazione delle gare con crea_gara()" << endl;
     Gara_Tappe_t g1, g2, g3, g4;
-    
+    Gara_Tappe_t* pg1 = &g1;
+    Gara_Tappe_t* pg2 = &g2;
+
     crea_gara(g1, "Giro d'Italia", 109);
     crea_gara(g2, "Tour de France", 113);
     crea_gara(g3, "Vuelta a Espana", 79);
@@ -61,9 +63,9 @@ int main() {
     // --- TEST 4: stampa_gara ---
     cout << "\n[TEST 4] Stampa dei dettagli della gara con stampa_gara()" << endl;
     cout << "--------------------------------------------------" << endl;
-    stampa_gara(g1);
+    stampa_gara(pg1);
     cout << "--------------------------------------------------" << endl;
-    stampa_gara(g2);
+    stampa_gara(pg2);
     cout << "--------------------------------------------------" << endl;
 
     return 0;
