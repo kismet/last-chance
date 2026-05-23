@@ -1,39 +1,52 @@
-/**
-* Calcola la media di punteggi
- */
-void calcola_media(Pilota_t &x);
+#include "../inc/libreria_tipi.h"
 
 /**
- * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
+* Calcola la media di km di compiere in questa gara
  */
-bool aggiungi_granpremio(Pilota_t &x, int p);
+void lunghezza_media(Gara_Tappe_t &x) {
+    
+    //messo un float in caso un valore fosse con la virgola
+    float somma = 0, media;
+    int tengoConto = 0;
+    for (int i = 0; i<N_MASSIMO_TAPPE; i++) {
+        somma += x.tappe[i];
+        tengoConto++;
+    }
+    //fatto casting per prevenzione
+    media = somma/(float)tengoConto;
+    x.lunghezza_media_tappe = media;
+}
 
 /**
- * Inizializza un pilota, dandogli un nome n e una scuderia s
+ * Aggiunge il p kilometri all'elenco di un cadavedere x se ci sono posti liberi e altrimenti restituisce false
  */
-void crea_pilota(Pilota_t &x, string n, string s);
+bool aggiungi_tappa(Gara_Tappe_t &x, float p);
 
 /**
- * Stampa tutte le informazioni del pilota x: nome, cognome, numero di gran premi e punteggio per ogni gran premio
- * e infine la media
+ * Inizializza una gara a tappe di nome n ed edizione e
  */
-void stampa_pilota(Pilota_t *x);
+void crea_gara(Gara_Tappe_t &x, string n, int e);
 
 /**
- * Togli p punti dall'ultimo piazzamento del pilota x
+ * Stampa tutte le informazioni della gara a tappe x: nome, edizione, numero di tappe,
+ * lunghezza di ogni tappa,  e infine la media
+ */
+void stampa_gara(Gara_Tappe_t *x);
+
+/**
+ * Togli x km dall'ultima tappa
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-void retrocedi(Pilota_t *s, float punti);
+void trasferimento(Gara_Tappe_t *s, float km);
 
 /**
- * Restituisce il Pilota campione del mondo (quello con più punti)
+ * Restituisce la gara più lunga
  * OPZIONALE: per chi ha diritto alla riduzione
  */
-Pilota_t* campione_del_mondo(Pilota_t pilots[], int dim);
+Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim);
 
 /**
- * Restituisce il nome della scuderia che ha fatto più punti
- * BONUS: per chi ha diritto alla riduzione
+ * Restituisce il nome della gara che risulta più lunga in km dalla sua prima edizione ad ora
+ * BONUS: per TUTTI
  */
-string scuderia_campione(Pilota_t pilots[], int dim);
-
+string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim);
