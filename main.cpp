@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include "inc/libreria.h"
 #include "inc/libreria_tipi.h"
 
 using namespace std;
