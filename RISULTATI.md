@@ -10,7 +10,7 @@
   - Task 1.6 Risoluzione dei conflitti (BONUS) [0/1.5 punti]
     - Motivazione: non svolto
 ## Totale 7/10
-## Valutazione 7
+## Valutazione 7+
 
 # Programmazione
 - Completo, sono state implementate tutte le funzioni [0.8/1 Punto]
@@ -26,5 +26,5 @@
   - stampa_pilota [0.8/1 Punti]
   - campione_del_mondo [0/1.5 Punti]
 - Bonus [0/1.5 Punti]
-## Totale 4.7/8.5
-## Valutazione 6
+## Totale 4.7/10
+## Valutazione 5.5
