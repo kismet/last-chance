@@ -8,7 +8,7 @@
   - Task 1.5: Merge dei risultati [0/1.5 punti]
   - Task 1.6 Risoluzione dei conflitti (BONUS) [0/1.5 punti]
 ## Totale 7/10
-## Valutazione 7
+## Valutazione 7+
 
 # Programmazione
 - Completo, sono state implementate tutte le funzioni [1/1 Punto]
@@ -24,5 +24,5 @@
   - stampa_pilota [0.4/1 Punti]
   - campione_del_mondo [1.5/1.5 Punti]
 - Bonus [1.5/1.5 Punti]
-## Totale 9.4/10
-## Valutazione 9
+## Totale 9.4/11.5
+## Valutazione 8.5
