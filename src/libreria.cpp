@@ -37,6 +37,7 @@ void crea_pilota(Pilota_t &x, string n, string s)
     x.scuderia= s;
     x.numero_gp= 0;
     x.media = 0.0;
+    //LENZI non è necessario inizializzare i punti in questo caso
     for ( int i =0; i<N_GRAN_PREMI; i++) {
         x.punti[i] = 0;
     }
