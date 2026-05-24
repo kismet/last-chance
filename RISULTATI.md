@@ -14,14 +14,14 @@
 - Completo, sono state implementate tutte le funzioni [x/1 Punto]
 - Progetto compila ed è possibile eseguire il main [x/1 Punto]
 - Correzione degli errori nel progetto [x/1 Punti]
-- Uso corrtto di array, puntatori e struct [x/1 Punti ]
+- Uso corretto di array, puntatori e struct [x/1 Punti]
 - Correttezza [x/6 Punti] divisi in questo modo:
-  - calcola_media [x/1 Punti]
-  - aggiungi_granpremio [x/1 Punti]
-  - crea_pilota [x/0.5 Punti]
-  - retrocedi [x/1 Punti]
-  - stampa_pilota [x/1 Punti]
-  - campione_del_mondo [x/1.5 Punti]
+  - tratta_media [x/1 Punti]
+  - aggiungi_tratta [x/1 Punti]
+  - crea_viaggio [x/0.5 Punti]
+  - scorciatoia [x/1 Punti]
+  - stampa_viaggio [x/1 Punti]
+  - viaggio_lungo [x/1.5 Punti]
 - Bonus [x/1.5 Punti]
-## Totale x/8.5
+## Totale x/10
 ## Valutazione
