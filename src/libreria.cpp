@@ -58,7 +58,7 @@ void crea_pilota(Pilota_t &x, string n, string s) {
  * e infine la media
  */
 void stampa_pilota(Pilota_t *x) {
-
+    //LENZI non compila, ogni volta dovevi scrivere x-> invece di x.
     cout << "Nome: " << x.cognome << endl;
     cout << "Scuderia: " << x.scuderia << endl;
     cout << "Numero gp: " << x.numero_gp << endl;
