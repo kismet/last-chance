@@ -19,6 +19,7 @@ void tratta_media(Viaggio_t &x) {
             somma += x.tratte[i];
         }
     }
+    //LENZI non funziona quando contatore è ZERO
     x.media = somma / contatore;
 }
 
@@ -40,6 +41,8 @@ bool aggiungi_tratta(Viaggio_t &x, float km) {
 void crea_viaggio(Viaggio_t &x, string p, string d) {
     x.partenza = p;
     x.destinazione = d;
+    //LENZI meglio inizializzare anche x.numero_tratte = 0;
+
 }
 
 /**
@@ -47,6 +50,7 @@ void crea_viaggio(Viaggio_t &x, string p, string d) {
  * e infine la distanza media di ogni tratta
  */
 void stampa_viaggio(Viaggio_t &x) {
+    //LENZI hai cambiato il prototipo della funzione
     cout << "partenza: " << x.partenza << endl;
     cout << "destinazione: " << x.destinazione << endl;
     cout << "chilometri tratte: ";
