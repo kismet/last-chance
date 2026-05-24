@@ -12,11 +12,11 @@
 * Calcola la media di punteggi
  */
 void calcola_media(Pilota_t &x) {
-
     x.media=0;
     for (int i=0; i < x.numero_gp; i++) {
         x.media = x.media + x.punti[i];
     }
+    //LENZI non funziona nel caso x.numero_gp == 0
     x.media = x.media / x.numero_gp;
 }
 
@@ -26,6 +26,13 @@ void calcola_media(Pilota_t &x) {
 bool aggiungi_granpremio(Pilota_t &x, int p) {
 
     if(x.numero_gp < N_GRAN_PREMI) {
+        //LENZI greve punteggio_totale è una variabile locale non lo salvi all'interno di x
+        //da valutare se calcolare/aggiornare anche la media
+        /*
+         * Versione corretta
+         * x.punti[x.numero_gp] = p;
+         * x.numero_gp++;
+         */
         int punteggio_totale=0;
         for (int i=0; i < x.numero_gp; i++) {
             punteggio_totale += x.punti[i];
@@ -57,6 +64,7 @@ void stampa_pilota(Pilota_t *x) {
     cout<<x->scuderia<<endl;
     cout<<x->numero_gp<<endl;
 
+    //LENZI dovevi limitarti ad i<x->numero_gp come hai fatto per calcola_media
     for (int i=0; i < N_GRAN_PREMI; i++) {
         cout<<x->punti[i]<<endl;
     }
@@ -70,6 +78,12 @@ void stampa_pilota(Pilota_t *x) {
  */
 void retrocedi(Pilota_t *s, float punti) {
 
+    //LENZI stesso errore di aggiungi_granpremio
+    /**
+     * Versione corretta
+     * if( x->numero_gp == 0 ) return;
+     * x->punti[x->numero_gp-1]-=punti;
+     */
     int punteggio_totale=0;
     for (int i=0; i < s->numero_gp; i++){
         punteggio_totale +=s->punti[i];
