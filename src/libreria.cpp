@@ -11,11 +11,13 @@
  */
 void calcola_media(Pilota_t &x) {
     int sum = 0;
+    //LENZI mai visto a scuola...
     for (int i : x.punti) {
         if (i != -1) {
             sum = sum + i;
         }
     }
+    //LENZI non funziona nel caso x.numero_gp == 0
     x.media = sum / x.numero_gp;
 }
 
@@ -23,6 +25,7 @@ void calcola_media(Pilota_t &x) {
  * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
  */
 bool aggiungi_granpremio(Pilota_t &x, int p) {
+    //LENZI sbagliato c'era da usare la costante N_GRAN_PREMI
     int grandezza = 22;
     for (int i = 0; i < grandezza; i++) {
         if (x.punti[i] == -1) {
@@ -32,6 +35,7 @@ bool aggiungi_granpremio(Pilota_t &x, int p) {
             return true;
         }
     }
+    //LENZI in questo caso non serve ricalcolare la media
     calcola_media(x);
     return false;
 }
@@ -44,6 +48,8 @@ void crea_pilota(Pilota_t &x, string n, string s) {
     x.nome = n;
     x.scuderia = s;
     for (int i = 0; i < numGP; i++) {
+        //LENZI ottima idea inizializzarli a valore "nullo" ma non necessario considerato
+        //che hai il campo numero_gp
         x.punti[i] = -1;
     }
     x.media = 0;
@@ -55,8 +61,10 @@ void crea_pilota(Pilota_t &x, string n, string s) {
  * e infine la media
  */
 void stampa_pilota(Pilota_t *x) {
+    //LENZI non stampi la scuderia
     std::cout << x->nome << "\n";
     std::cout << x->numero_gp << "\n";
+    //LENZI mettere una cout<<"sto stampando i punti:"
     for (int i : x->punti) {
         if (i != -1) {
             std::cout << i << ' ';
@@ -71,6 +79,9 @@ void stampa_pilota(Pilota_t *x) {
  * OPZIONALE: per chi ha diritto alla riduzione
  */
 void retrocedi(Pilota_t *s, float punti) {
+    //LENZI letto male il testo non vanno tolti i punti da TUTTI i gp
+    //ma solo dall'ultimo...
+    //LENZI Errore quando numero_gp == N_GRAN_PREMI perchè s->punti[i] va fuori dall'array
     for (int i = s->numero_gp; i > 0; i--) {
         s->punti[i] = s->punti[i] - punti -1;
     }
@@ -84,6 +95,9 @@ Pilota_t* campione_del_mondo(Pilota_t pilots[], int const dim) {
     int puntiTot[dim];
     int ricordaIndice = 0;
     for (int i = 0; i < dim; i++) {
+        //LENZI errore manca inizializzazione puntiTot[i] = 0;
+        //LENZI sbagliato questo indice j non si deve fermare a dim ma
+        //j < pilots[i].numero_gp
         for (int j = 0; j < dim; j++) {
             if (pilots[i].punti[j] != -1) {
                 puntiTot[i] = puntiTot[i] + pilots[i].punti[j];
@@ -91,6 +105,7 @@ Pilota_t* campione_del_mondo(Pilota_t pilots[], int const dim) {
         }
     }
     for (int i = 0; i < dim; i++) {
+        //GRAVE non si trova così il massimo...
         for (int j = 0; j < dim; j++) {
             if (puntiTot[i] > puntiTot[j]) {
                 ricordaIndice = j;
@@ -112,11 +127,13 @@ string scuderia_campione(Pilota_t pilots[], int dim) {
     for (int i = 0; i < dim; i++) {
         for (int j = 0; j < dim; j++) {
             if (arrScuderie[i + 1] == arrScuderie[j]) {
+                //LENZI idea okay ma non funziona non tornano gli indici perchè arrScuderia diminuisce di un elemento
                 arrScuderie[i].erase();
             }
         }
     }
     int puntiScuderia[arrScuderie.size()];
+    //LENZI sbagliato di nuovo limite per j deve essere j < arrScuderie.size()
     for (int i = 0; i < dim; i++) {
         for (int j = 0; j < dim; j++) {
             if (pilots[i].scuderia == arrScuderie[j]) {
@@ -126,5 +143,6 @@ string scuderia_campione(Pilota_t pilots[], int dim) {
             }
         }
     }
+    //LENZI manca la return
 }
 
