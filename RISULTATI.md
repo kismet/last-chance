@@ -8,20 +8,20 @@
   - Task 1.5: Merge dei risultati [0/1.5 punti]
   - Task 1.6 Risoluzione dei conflitti (BONUS) [0/1.5 punti]
 ## Totale 7/10
-## Valutazione 7
+## Valutazione 7+
 
 # Programmazione
 - Completo, sono state implementate tutte le funzioni [1/1 Punto]
 - Progetto compila ed è possibile eseguire il main [1/1 Punto]
 - Correzione degli errori nel progetto [1/1 Punti]
-- Uso corretto di array, puntatori e struct [1/1 Punti ]
-- Correttezza [x/6 Punti] divisi in questo modo: (Motivazione nel codice)
+- Uso corretto di array, puntatori e struct [1/1 Punti]
+- Correttezza [4.2/6 Punti] divisi in questo modo: (Motivazione nel codice)
   - calcola_media [0.8/1 Punti]
   - aggiungi_granpremio [1/1 Punti]
   - crea_pilota [0.5/0.5 Punti]
   - retrocedi [0.4/1 Punti]
   - stampa_pilota [0.9/1 Punti]
   - campione_del_mondo [0.6/1.5 Punti]
-- Bonus [0.6/1.5 Punti]
-## Totale 8.8/10
-## Valutazione 8.5
+- Bonus [0.6/1.5 Punti] (Motivazione nel codice)
+## Totale 8.8/11.5
+## Valutazione 8+
