@@ -11,7 +11,7 @@
 * Calcola la media di punteggi
  */
 void calcola_media(Pilota_t &x);
-
+//LENZI Il codice va messo all'interno delle graffe per identificare il corpo della funzioni
 int s = 0;
 
 for (int i = 0; i < x.n_granpremi; i++) {
@@ -29,6 +29,7 @@ bool aggiungi_granpremio(Pilota_t &x, int p);
  */
 void crea_pilota(Pilota_t &x, string n, string s);
 {
+    //LENZI Mancano i punti e virgola
     x.nome = n
     x.scuderia = s
 
