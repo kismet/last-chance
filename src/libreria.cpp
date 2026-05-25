@@ -9,10 +9,11 @@
 * Calcola la media di punteggi
  */
 float calcola_media(Pilota_t &x) {
+    //LENZI perchè hai cambiato la firma?
 int somma=0;
 float media =0;
     for (int i = 0; i < x;i++) {
-
+        //LENZI che cosa è p?
         somma = somma+p;
         media = somma/i;
 
@@ -24,7 +25,7 @@ float media =0;
  * Aggiunge il p punti al pilota x, se ci sono posti liberi e altrimenti restituisce false
  */
 bool aggiungi_granpremio(Pilota_t &x, int p) {
-
+    //LENZI codice incompleto...
     if (x == ) {
 
         Pilota_t &x + p;
@@ -39,7 +40,7 @@ bool aggiungi_granpremio(Pilota_t &x, int p) {
  * Inizializza un pilota, dandogli un nome n e una scuderia s
  */
 void crea_pilota(Pilota_t &x, string n, string s) {
-
+    //LENZI cosa volevi fare?
     Pilota_t p1, p2, p3;
     crea_pilota(p1, n, s);
     crea_pilota(p2, n, s);
@@ -52,7 +53,7 @@ void crea_pilota(Pilota_t &x, string n, string s) {
  * e infine la media
  */
 void stampa_pilota(Pilota_t *x,p1,p2,p3) {
-
+    //LENZI ma dovevi implementarle...
     stampa_pilota(p1);
     stampa_pilota(p2);
     stampa_pilota(p3);
