@@ -53,6 +53,7 @@ void crea_gara(Gara_Tappe_t &x, string n, int e) {
     x.num_tappe = 0;
     x.lunghezza_media_tappe = 0;
 
+    //LENZI questo non è necessario
     for ( int i = 0; i < N_MASSIMO_TAPPE; i++ ) {
         x.tappe[i] = 0;
     }
@@ -78,6 +79,7 @@ void trasferimento(Gara_Tappe_t *s, float km) {
 
     if ( s->num_tappe > 0 ) {
         s->tappe[s->num_tappe - 1] -= km;
+        //LENZI bisogna stare attenti che la lunghezza non sia minore di 0
         lunghezza_media(*s);
     }
 }
@@ -122,6 +124,10 @@ string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim) {
     string nomeGaraLunga = gare[0].nome;
     float mediaGaraLunga = gare[0].lunghezza_media_tappe;
 
+    //LENZI interpretazione sbagliata della domanda, dovevi considerare la somma di tutte le edizioni
+    //Es.: La vuelta lunga 100km ma con 20 edizioni è più lunga della coppa del mondo di 500km perchè
+    //sono 2000km vs 500km
+    
     // Parto da secondo elemento dell'array
     for ( int i = 1; i < dim; i++ ) {
         if ( gare[i].lunghezza_media_tappe > mediaGaraLunga ) {
