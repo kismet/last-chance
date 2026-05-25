@@ -5,8 +5,8 @@
 
 #include <iostream>
 #include <ostream>
-#include "C:\Users\esposito.lorenzo/Documents/last-chance/inc/libreria_tipi.h"
-
+//LENZI se metti include con il percorso completo funziona ma solo sul tuo PC andava messo il percorso relativo
+#include "../inc/libreria.h"
 /**
 * Calcola la media di km di compiere in questa gara
  */
@@ -42,6 +42,7 @@ bool aggiungi_tappa(Gara_Tappe_t &x, float p) {
 void crea_gara(Gara_Tappe_t &x, string n, int e) {
     x.nome = n;
     x.anno = e;
+    //LENZI meglio se inizializzi almeno x.num_tappe = 0;
 }
 
 /**
@@ -67,6 +68,8 @@ void trasferimento(Gara_Tappe_t *s, float km) {
     if (s->num_tappe != 0) {
         if (s->tappe[s->num_tappe-1] <= km) {
             s->tappe[s->num_tappe-1] = 0;
+            //LENZI questo è sbagliato non diminuisce il numero delle tappe, anche se ne capisco il senso ma lo dovevi
+            //spiegare meglio
             s->num_tappe--;
         }
         else {
@@ -87,6 +90,10 @@ Gara_Tappe_t* gara_piu_lunga(Gara_Tappe_t gare[], int dim) {
     Gara_Tappe_t* piu_lunga = &gare[0];
 
     for (int i = 1; i < dim; i++) {
+        //LENZI idea interessante, ma potenzialmente pericolosa  :)
+        //Due note:
+        // - Vantaggi se media è sempre aggiornata le prime 3 righe della funzione non servirebbero e quindi così è veloce
+        // - Errori di approssimazione dovuti ai float potrebbero farti trovare la gara sbagliata
         if (gare[i].lunghezza_media_tappe*gare[i].num_tappe > piu_lunga->lunghezza_media_tappe*piu_lunga->num_tappe) {
             piu_lunga = &gare[i];
         }
