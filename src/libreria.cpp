@@ -18,6 +18,7 @@ void costo_medio_libri(Libri_t &x) {
     if (x.num_libri == 0) {
         x.media=0.0;
     }
+    //LENZI ed il conteggio negli altri casi?
 }
 
 bool aggiungi_costo_libro(Libri_t &x, float p) {
@@ -31,6 +32,7 @@ bool aggiungi_costo_libro(Libri_t &x, float p) {
 void crea_lista_libri(Libri_t &x, string c, string i) {
     x.anno=c;
     x.indirizzo=i;
+    //LENZI grave va prima inizializzato
     x.num_libri++;
     x.media=0.0;
 }
@@ -42,12 +44,15 @@ void stampa_lista_libri(Libri_t *x) {
     cout<<"Anno: "<<x->anno<<endl;
     cout<<"Indirizzo: "<<x->indirizzo<<endl;
     cout<<"Numero libri: "<<x->num_libri<<endl;
+    //LENZI questa è un array quindi va stampato il suo contenuto da 0 a x->num_libri
     cout<<"Costo libri: "<<x->costo[x->num_libri-1]<<endl;
     cout<<"Media: "<<x->media<<endl;
 }
 
 void sconto(Libri_t *s, float punti) {
     if (s!=nullptr and s->num_libri>0) {
+        //LENZI così non togli, ma gli assegni un punteggio la versione corretta era
+        //s->costo[s->num_libri-1]-=punti
         s->costo[s->num_libri-1]=punti;
 
         if (s->costo[s->num_libri-1]<0) {
@@ -69,6 +74,7 @@ Libri_t* libro_economico(Libri_t elenchi[], int dim) {
             if (!trovato or elenchi[i].costo[j]<minimo) {
                 minimo=elenchi[i].costo[j];
                 lista_col_minimo=&elenchi[i];
+                //LENZI Grave con questa strategia non si trova il minimo
                 trovato=true;
             }
         }
@@ -87,7 +93,7 @@ string scuderia_campione(Libri_t elenchi[], int dim) {
 
     for (int i=0;i<dim;i++) {
         string corrente=elenchi[i].indirizzo;
-
+        //LENZI a cosa serve calcolato?
         bool calcolato=false;
         for (int j=0; j<i; j++) {
             if (elenchi[j].indirizzo==corrente) {
