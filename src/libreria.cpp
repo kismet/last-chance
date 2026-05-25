@@ -18,6 +18,7 @@ void costo_medio_libri(Libri_t &x) {
     for (int i=0; i<x.num_libri; i++) {
         somma+=x.costo[i];
     }
+    //LENZI non funziona quando x.num_libri == 0
     x.media=somma/x.num_libri;
 }
 
@@ -29,6 +30,7 @@ bool aggiungi_costo_libro(Libri_t &x, float p) {
     int cont=0;
     int salvaI;
     if (N_MATERIE==x.num_libri) return false;
+    //LENZI non funziona il valore iniziale x.num_libri è 0 e considera il primo vuoto
     x.costo[x.num_libri-1]=p;
     x.num_libri++;
     costo_medio_libri(x);
@@ -57,6 +59,7 @@ void stampa_lista_libri(Libri_t *x) {
     cout<<"indirizzo: "<< x->indirizzo << endl;
     cout<<"numero libri: "<< x->num_libri << endl;
     for (int i=0; i<x->num_libri; i++) {
+        //LENZI perchè x->costo[i-1] ? quando i=0 il valore è -1 che non è un indice valido, colpa di aggiungi_libri
         cout<<"costo libri: "<< x->costo[i-1] << endl;
     }
     cout<<"media: "<< x->media << endl;
@@ -70,6 +73,7 @@ void stampa_lista_libri(Libri_t *x) {
 void sconto(Libri_t *s, float punti) {
 
     if (s->num_libri==0) {
+        //LENZI non si usano le cout nelle funzioni
         cout<<"non ci sono libri in elenco"<< endl;
     }else if (s->costo[s->num_libri-1]>=punti){
         s->costo[s->num_libri-1]-=punti;
@@ -85,6 +89,7 @@ void sconto(Libri_t *s, float punti) {
  * OPZIONALE: per chi ha diritto alla riduzione
  */
 float libro_economico(Libri_t elenchi[], int dim) {
+    //LENZI non si può cambiare la firma della funzione (il prototipo)
     double economico=0;
     for (int i=0; i<dim; i++) {
         for (int j=0; j<elenchi[i].num_libri; j++) {
