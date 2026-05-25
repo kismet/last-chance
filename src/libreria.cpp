@@ -12,6 +12,7 @@ void lunghezza_media(Gara_Tappe_t &x) {
     //messo un float in caso un valore fosse con la virgola
     float somma = 0, media;
     int tengoConto = 0;
+    //LENZI errore devi contare fino a x.num_tappe
     for (int i = 0; i<N_MASSIMO_TAPPE; i++) {
         somma += x.tappe[i];
         tengoConto++;
@@ -19,6 +20,7 @@ void lunghezza_media(Gara_Tappe_t &x) {
     //fatto casting per prevenzione
     media = somma/(float)tengoConto;
     x.lunghezza_media_tappe = media;
+    //LENZI non funziona se tengoConto = 0;
 }
 
 /**
@@ -43,6 +45,7 @@ bool aggiungi_tappa(Gara_Tappe_t &x, float p) {
 void crea_gara(Gara_Tappe_t &x, string n, int e) {
     x.nome = n;
     x.anno = e;
+    //LENZI andrebbe inizializzato x.num_tappe = 0
 }
 
 /**
@@ -58,6 +61,7 @@ void stampa_gara(Gara_Tappe_t *x) {
             cout<<"tappa numero: "<<i<<" lunghezza (km): "<<x->tappe[i]<<endl;
         }
     }
+    //LENZI poteva essere utile calcolare la media prima
     cout<<"media dei kilometri: "<<x->lunghezza_media_tappe<<endl;
 }
 
@@ -72,11 +76,12 @@ void trasferimento(Gara_Tappe_t *s, float km) {
             indiceUltimaGara = i;
         }
     }
+    //LENZI ? Il testo non lo chiede... Errore comprensione del testo
     //se negativo tolgo km al precedente
     for (int i = indiceUltimaGara; i>=0; i--) {
-        if (km != 0) {
+        if (km != 0) { //LENZI perchè? vanno tolti solo all'ultimo non a tutti
             if (s->tappe[i] < km) {
-                km -= s->tappe[i];
+                km -= s->tappe[i]; //LENZI perchè?
                 s->tappe[i] = 0;
             }else if (s->tappe[i] > km) {
                 s->tappe[i] -= km;
@@ -123,6 +128,9 @@ long calcoloLunghezzaTotaleGara(Gara_Tappe_t g) {
  * BONUS: per TUTTI
  */
 string gare_storica_piu_lunga(Gara_Tappe_t gare[], int dim) {
+    //LENZI interpretazione sbagliata della domanda, dovevi considerare la somma di tutte le edizioni
+    //Es.: La vuelta lunga 100km ma con 20 edizioni è più lunga della coppa del mondo di 500km perchè
+    //sono 2000km vs 500km
     Gara_Tappe_t *pGaraPiuLunga = gara_piu_lunga(gare, dim);
     return pGaraPiuLunga->nome;
 }
